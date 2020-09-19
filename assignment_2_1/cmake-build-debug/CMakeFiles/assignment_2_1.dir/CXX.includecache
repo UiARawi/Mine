@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/mohasa18/dat220g20h/assignments/solutions/assignment_2_1/main.cpp
+iostream
+-
+iomanip
+-
+algorithm
+-
+list
+-
+
