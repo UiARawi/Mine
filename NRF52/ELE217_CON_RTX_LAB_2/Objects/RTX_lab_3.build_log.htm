@@ -1,0 +1,122 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.28.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Mohammed Alrawi, University of Agder, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.28.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.28.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      Segger\JL2CM3.dll V2.99.36.0
+Dialog DLL:      TCM.DLL V1.36.2.0
+ 
+<h2>Project:</h2>
+C:\Users\Rawi\Documents\UiA\Høst2019\ELE217\nRF5_SDK_15.3.0_59ac345\nRF5_SDK_15.3.0_59ac345\examples\peripheral\ELE217_CON_RTX_LAB_2\CON_RTX_LAB_2.uvprojx
+Project File Date:  10/30/2019
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
+assembling SVC_Table.s...
+compiling boards.c...
+compiling print_server.c...
+compiling nrfx_uart.c...
+compiling switch_monitor.c...
+compiling main.c...
+compiling nrfx_gpiote.c...
+compiling PCAL6408.c...
+PCAL6408.c(123): warning:  #550-D: variable "err_code_2"  was set but never used
+  						ret_code_t err_code_2;
+PCAL6408.c(126): warning:  #550-D: variable "err_code_0"  was set but never used
+  						ret_code_t err_code_0;
+PCAL6408.c: 2 warnings, 0 errors
+compiling nrf_drv_uart.c...
+compiling nrfx_atomic.c...
+compiling nrfx_timer.c...
+compiling nrfx_prs.c...
+compiling nrf_drv_twi.c...
+compiling nrfx_uarte.c...
+compiling nrfx_twim.c...
+compiling app_util_platform.c...
+compiling app_error.c...
+compiling nrf_assert.c...
+compiling nrf_pwr_mgmt.c...
+compiling nrf_atomic.c...
+compiling app_error_handler_keil.c...
+compiling nrfx_twi.c...
+compiling nrf_fprintf_format.c...
+compiling app_error_weak.c...
+compiling nrf_fprintf.c...
+compiling nrf_ringbuf.c...
+compiling nrf_balloc.c...
+compiling nrf_section_iter.c...
+assembling arm_startup_nrf52.s...
+compiling RTX_Conf_CM.c...
+compiling nrf_memobj.c...
+compiling system_nrf52.c...
+compiling nrf_strerror.c...
+linking...
+Program Size: Code=21280 RO-data=1536 RW-data=128 ZI-data=26984  
+".\Objects\RTX_lab_3.axf" - 0 Error(s), 2 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.5.1.pack
+                ARM.CMSIS.5.5.1
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: RTOS Version: 1.0.0
+   * Component: CORE Version: 5.2.0
+   * Component: Keil RTX Version: 4.81.1
+
+Package Vendor: NordicSemiconductor
+                http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/NordicSemiconductor.nRF_DeviceFamilyPack.8.24.1.pack
+                NordicSemiconductor.nRF_DeviceFamilyPack.8.24.1
+                Nordic Semiconductor nRF ARM devices Device Family Pack.
+   * Component: Startup Version: 8.24.1
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\RTOS\RTX\INC
+  C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ::CMSIS:RTOS:1.0.0 (API)
+
+   * Component: ARM::CMSIS:CORE:5.2.0
+
+   * Component: ARM::CMSIS:RTOS:Keil RTX:4.81.1
+      Include file:  CMSIS\RTOS\RTX\INC\cmsis_os.h
+      Library file:  CMSIS\RTOS\RTX\LIB\ARM\RTX_CM4.lib
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Timer.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Mutex.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MemPool.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Semaphore.c
+      Source file:   CMSIS\RTOS\RTX\SRC\ARM\SVC_Table.s
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MsgQueue.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MailQueue.c
+      Source file:   CMSIS\RTOS\RTX\Templates\RTX_Conf_CM.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Thread.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\main.c
+      Include file:  CMSIS\RTOS\RTX\UserCodeTemplates\osObjects.h
+
+   * Component: NordicSemiconductor::Device:Startup:8.24.1
+      Source file:   Device\Source\arm\arm_startup_nrf52.s
+      Source file:   Device\Source\system_nrf52.c
+      Include file:  Device\Include\system_nrf52.h
+Build Time Elapsed:  00:00:23
+</pre>
+</body>
+</html>

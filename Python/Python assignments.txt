@@ -1,0 +1,157 @@
+assignment_1_1
+
+with open("limit.txt",'r') as lim:
+    data_sum=lim.read()
+
+data_sum=int(data_sum)
+sum=0
+for element in range (data_sum+1):
+    if element%7==0:
+        sum += element
+print(sum)
+
+assignemnt_2_1
+
+def is_pal(number):
+    number = str(number)
+    reverse_number = number[::-1]
+    if number == reverse_number:
+        return True
+    else:
+        return False
+
+with open("digits.txt",'r') as dig:
+
+    data_pal=int(dig.read())
+    # temp_data_pal=data_pal.split("\n")
+    # number_list=[]
+    # for element in temp_data_pal:
+    #     if element.isdigit():
+    #         number_list.append(int(element))
+number_list=[]
+
+pal_list = []
+for a in range(10**(data_pal-1),10**data_pal):
+    number_list.append(a)
+
+for n in number_list:
+    for m in number_list:
+        product = n * m
+        if is_pal(product):
+            pal_list.append(product)
+print(max(pal_list))
+
+
+
+assignment_3_1
+
+with open("fibonacci.txt") as fibo:
+    data_fibo=fibo.read()
+    data_fibo=int(data_fibo)
+
+def find_fib(n):
+    fib_list = [1,1]
+    value_a = 1
+    value_b = 1
+    i = 0
+
+    while True:
+
+        temp = value_a + value_b
+
+        value_a = value_b
+
+        value_b = temp
+
+        if i > n:
+            break
+
+        fib_list.append(temp)
+        i +=1
+
+    return fib_list[n-1]
+print(find_fib(data_fibo))
+
+assignmnet_4_1
+
+import math
+def f(x):
+    #return math.e**x+ 2*x
+    return x**3-3*x+1
+def dfdx(x):
+    #return math.e**x + 2
+    return 3*x**2-3
+def newtons_methode(x, stop_cond):
+    while abs(f(x)) > stop_cond:
+        x = x - float(f(x))/dfdx(x)
+
+    return x
+result = newtons_methode(0.1,0.00000000001)
+result_1=newtons_methode(1.1,0.00001)
+result_2=newtons_methode(-2,0.00000001)
+result_r=round(result,3)
+result_1_r=round(result_1,3)
+result_2_r=round(result_2,3)
+
+print(result_r , result_1_r,result_2_r,sep='\n')
+
+assignment_5_1
+
+import numpy as np
+
+
+with open("numbers.txt",'r') as nm:
+    data_numpy_a=nm.read()
+    temp_data_numpy_a=data_numpy_a.split("\n")
+    number_list=[]
+    for element in temp_data_numpy_a:
+        temp_ele=element.split(" ")
+        for element_2 in temp_ele:
+            if element_2.isdigit():
+                number_list.append(int(element_2))
+
+print(number_list)
+
+e=np.array(number_list).reshape(6,6)
+print(e)
+print(np.sum(e[2]))
+print(np.sum(e[-1]))
+print(np.sum(e[2])+np.sum(e[-1]))
+
+assignment_6_1
+
+import numpy as np
+import math
+
+equtions = np.array([[7, 5, -3], [3, -5, 2], [5, 3, -7]])
+answers = np.array([[16], [-8], [0]])
+result = np.dot(np.linalg.inv(equtions), answers)
+
+print("(%i, %i, %i)" % (round(result[0][0]), round(result[1][0]), round(result[2][0])))
+
+
+assignment_7_1
+
+import numpy as np
+import math
+
+
+
+equations_array = np.genfromtxt('equations.txt')
+answers_array = np.genfromtxt('answers.txt')
+answers_array=np.array(answers_array).reshape(3,1)
+
+
+result = np.dot(np.linalg.inv(equations_array), answers_array)
+
+print("(%i, %i, %i)" % (round(result[0][0]), round(result[1][0]), round(result[2][0])))
+
+
+
+
+
+
+
+
+
+
