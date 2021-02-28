@@ -1,0 +1,102 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Apr 25 14:26:42 2019
+| Host         : DESKTOP-KASAADH running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Final_prosjekt_top_file_control_sets_placed.rpt
+| Design       : Final_prosjekt_top_file
+| Device       : xc7a100t
+----------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    30 |
+| Unused register locations in slices containing registers |    96 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      1 |            1 |
+|      3 |            4 |
+|      4 |            6 |
+|      5 |            1 |
+|      6 |            3 |
+|      7 |            2 |
+|      8 |            3 |
+|     11 |            2 |
+|    16+ |            8 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             110 |           41 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             105 |           32 |
+| Yes          | No                    | No                     |              88 |           17 |
+| Yes          | No                    | Yes                    |               3 |            2 |
+| Yes          | Yes                   | No                     |             142 |           35 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------------+-------------------------------------------------------+--------------------------------------------------+------------------+----------------+
+|          Clock Signal          |                     Enable Signal                     |                 Set/Reset Signal                 | Slice Load Count | Bel Load Count |
++--------------------------------+-------------------------------------------------------+--------------------------------------------------+------------------+----------------+
+|  Del_1/fsm_display/Refresh_CLK |                                                       |                                                  |                1 |              1 |
+|  Del_1/Prescaler/CLK           |                                                       |                                                  |                1 |              3 |
+|  Del_1/Mux_clock_div/clk_fsm_1 |                                                       |                                                  |                3 |              3 |
+|  Del_1/fsm_display/Refresh_CLK | Del_1/fsm_display/y                                   | Del_1/fsm_display/Counter_n/Clear                |                2 |              3 |
+|  Del_1/fsm_display/y           |                                                       |                                                  |                1 |              3 |
+|  Clk_Final_IBUF_BUFG           | ADXL_362_ctrl/CE_Cnt_Num_Reads                        | ADXL_362_ctrl/Reset_Cnt_Num_Reads                |                1 |              4 |
+|  Clk_Final_IBUF_BUFG           | ADXL_362_ctrl/Cmd_Reg[0]_0                            | ADXL_362_ctrl/Cmd_Reg[0][6]_i_1_n_0              |                1 |              4 |
+|  Clk_Final_IBUF_BUFG           | ADXL_362_ctrl/FSM_sequential_StC_Adxl_Ctrl[3]_i_1_n_0 | Reset_final_IBUF                                 |                3 |              4 |
+| ~Clk_Final_IBUF_BUFG           |                                                       | Del_1/Fsm_1_sw/FSM_sequential_y_reg[2]_0         |                2 |              4 |
+| ~Clk_Final_IBUF_BUFG           |                                                       | Del_1/Fsm_1_sw/Q[6]_i_3__1_3                     |                1 |              4 |
+| ~Clk_Final_IBUF_BUFG           |                                                       | Del_1/Fsm_1_sw/Q[6]_i_4__0_0                     |                3 |              4 |
+|  Clk_Final_IBUF_BUFG           | ADXL_362_ctrl/Cmd_Reg[1][6]_i_2_n_0                   | ADXL_362_ctrl/Cmd_Reg[1]0_in[7]                  |                1 |              5 |
+|  Clk_Final_IBUF_BUFG           |                                                       | Reset_final_IBUF                                 |                2 |              6 |
+|  Clk_Final_IBUF_BUFG           |                                                       | ADXL_362_ctrl/SPI_Interface/SCLK_2X_DIV0         |                2 |              6 |
+|  Clk_Final_IBUF_BUFG           | ADXL_362_ctrl/Cmd_Reg[2]_1                            | ADXL_362_ctrl/Cmd_Reg[2][7]                      |                1 |              6 |
+|  Clk_Final_IBUF_BUFG           | ADXL_362_ctrl/Shift_Cmd_Reg                           | Reset_final_IBUF                                 |                1 |              7 |
+| ~Clk_Final_IBUF_BUFG           |                                                       | Del_1/Fsm_1_sw/fsm_1_out[0]                      |                3 |              7 |
+|  Clk_Final_IBUF_BUFG           | ADXL_362_ctrl/SPI_Interface/MOSI_REG[7]_i_1_n_0       |                                                  |                2 |              8 |
+|  Clk_Final_IBUF_BUFG           | ADXL_362_ctrl/SPI_Interface/SHIFT_TICK_IN             |                                                  |                2 |              8 |
+|  Clk_Final_IBUF_BUFG           | ADXL_362_ctrl/SPI_Interface/Dout[7]_i_1_n_0           |                                                  |                1 |              8 |
+|  Clk_Final_IBUF_BUFG           |                                                       | ADXL_362_ctrl/Cnt_SS_Inactive0                   |                4 |             11 |
+|  mux_4_1[11]                   |                                                       |                                                  |                6 |             11 |
+|  Clk_Final_IBUF_BUFG           |                                                       | ADXL_362_ctrl/Reset_Sample_Rate_Div              |                3 |             17 |
+|  Clk_Final_IBUF_BUFG           |                                                       | Del_1/fsm_display/Refresh_CLK_counter[0]_i_1_n_0 |                5 |             20 |
+|  Clk_Final_IBUF_BUFG           |                                                       |                                                  |               10 |             22 |
+|  Clk_Final_IBUF_BUFG           |                                                       | Del_1/Prescaler/clk_1Hz_i                        |                7 |             26 |
+|  Clk_Final_IBUF_BUFG           | ADXL_362_ctrl/StC_Adxl_Ctrl[3]                        | Reset_final_IBUF                                 |               11 |             48 |
+|  Clk_Final_IBUF_BUFG           | ADXL_362_ctrl/CE_Cnt_Num_Reads                        | ADXL_362_ctrl/ACCEL_X_SUM0                       |               16 |             64 |
+|  Clk_Final_IBUF_BUFG           | ADXL_362_ctrl/SPI_Interface/Shift_Data_Reg            |                                                  |               12 |             64 |
+| ~Clk_Final_IBUF_BUFG           |                                                       |                                                  |               19 |             67 |
++--------------------------------+-------------------------------------------------------+--------------------------------------------------+------------------+----------------+
+
+

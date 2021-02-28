@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Apr 25 14:25:26 2019
+# Process ID: 35292
+# Current directory: C:/Users/Rawi/Documents/UiA/Vr_19/ELE_112/Lab/prosjekt/Final_project.runs/synth_1
+# Command line: vivado.exe -log Final_prosjekt_top_file.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Final_prosjekt_top_file.tcl
+# Log file: C:/Users/Rawi/Documents/UiA/Vr_19/ELE_112/Lab/prosjekt/Final_project.runs/synth_1/Final_prosjekt_top_file.vds
+# Journal file: C:/Users/Rawi/Documents/UiA/Vr_19/ELE_112/Lab/prosjekt/Final_project.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Final_prosjekt_top_file.tcl -notrace

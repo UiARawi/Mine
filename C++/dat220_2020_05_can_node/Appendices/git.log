@@ -1,0 +1,34 @@
+667b855 Morten Jacobsen                2020-12-08 Release version 1.0
+0e371ad Morten Jacobsen                2020-12-08 Release version 1.0
+b490ad6 Mohammed Salih AlRawi          2020-12-04 Deleted some unused code
+fbb0a76 Morten Jacobsen                2020-11-26 Added screen 3 and 4, early test
+8e3d307 Morten Jacobsen                2020-11-26 Merge branch 'master' of ssh://tools.uia.no:7999/dat220g20h/isklr into master
+98ec5db Morten Jacobsen                2020-11-26 Added STM32H7B3I-DK-MergeTest/TouchGFX/assets/texts/texts.xlsx
+fe1ab40 Morten Jacobsen                2020-11-25 Screen2 functional, might need visual improvement in time
+901ef24 Mohammed Salih AlRawi          2020-11-25 Fixed and cleaned TGFX code
+b8c9cde Mohammed Salih AlRawi          2020-11-19 Added FPS function to BatteryScreen
+e58ebf7 Mohammed Salih AlRawi          2020-11-18 Konfiguert ekstern SDRAM for TGFX Framebuffer
+f24519d Morten Jacobsen                2020-11-18 Added screen2 and more functions to screen1
+c1d6446 Morten Jacobsen                2020-11-17 Screen 2 + setting up extern flash
+ae8256c Morten Jacobsen                2020-11-16 Worked on master by fault. Added functions for dataflow for model, presenter, view from CAN
+4de5fb9 Mohammed Salih AlRawi          2020-11-16 Fixed en bug in switch_decode()
+de35a41 Morten Jacobsen                2020-11-10 added variables to model, cleaned in Batteryscreenview
+360e0b7 Mohammed Salih AlRawi          2020-11-10 Fixed size of stack for TGX thread
+ce8974d Mohammed Salih AlRawi          2020-11-10 Added enable and disable interrupt function to switch_decode
+a7b0918 Mohammed Salih AlRawi          2020-11-10 Added a switch to switch_decode function
+0b5061b Mohammed Salih AlRawi          2020-11-10 Added member variables and functions to CAN Class
+ac2844d Mohammed Salih AlRawi          2020-11-03 Added a switch to decode IDs
+5237257 Mohammed Salih AlRawi          2020-11-03 Added decode functions to CAN class
+1fcb8cb Morten Jacobsen                2020-11-02 Added BatteryScreen to TouchGFX
+9236da1 Mohammed Salih AlRawi          2020-11-02 Added Can Class
+5ec98e9 Mohammed Salih AlRawi          2020-11-02  Added Can class
+d93dab4 Mohammed Salih AlRawi          2020-11-02 Added functionable project folder
+7ed2b68 Mohammed Salih AlRawi          2020-11-02 Edited .gitignore
+1edf568 Mohammed Salih AlRawi          2020-11-02 Deleted Create branch.txt
+56ecb97 Mohammed Salih AlRawi          2020-11-02 Deleted Project folder
+b58c948 Mohammed Salih AlRawi          2020-10-29 Testing merge branches
+72a2715 Mohammed Salih AlRawi          2020-10-28 Create branch
+53c6c37 Mohammed Salih AlRawi          2020-10-28 Merge branch 'master' of ssh://tools.uia.no:7999/dat220g20h/isklr into master
+ff6b8c8 Mohammed Salih AlRawi          2020-10-28 Added functionable CAN driver
+e41315e Morten Jacobsen                2020-10-28 Added .gitignore
+9d5d8e3 Mohammed Salih AlRawi          2020-09-24 Added .gitignore

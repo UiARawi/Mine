@@ -1,0 +1,11 @@
+.idea
+bin
+cmake-build-*
+Debug
+obj
+.settings
+venv
+*.db
+*.pyc
+*.swp
+
