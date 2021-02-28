@@ -1,0 +1,1373 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(i.main) refers to rt_cmsis.o(i.osKernelInitialize) for osKernelInitialize
+    main.o(i.main) refers to spi.o(i.SpiInit) for SpiInit
+    main.o(i.main) refers to rt_cmsis.o(i.osKernelStart) for osKernelStart
+    spi.o(i.SpiInit) refers to nrf_drv_spi.o(i.nrf_drv_spi_init) for nrf_drv_spi_init
+    spi.o(i.SpiInit) refers to rt_cmsis.o(i.osThreadCreate) for osThreadCreate
+    spi.o(i.SpiInit) refers to spi.o(.constdata) for .constdata
+    spi.o(i.SpiInit) refers to spi.o(i.spi_event_handler) for spi_event_handler
+    spi.o(i.SpiInit) refers to spi.o(.data) for spi_thread_id
+    spi.o(i.SpiMaster) refers to rt_cmsis.o(i.osMessageGet) for osMessageGet
+    spi.o(i.SpiMaster) refers to nrfx_spim.o(i.nrfx_spim_xfer) for nrfx_spim_xfer
+    spi.o(i.SpiMaster) refers to spi.o(.data) for m_tx_buf
+    spi.o(i.SpiMaster) refers to spi.o(.bss) for m_rx_buf
+    spi.o(i.SpiMaster) refers to spi.o(.constdata) for spi
+    spi.o(i.spi_event_handler) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    spi.o(i.spi_event_handler) refers to spi.o(.data) for spi_xfer_done
+    spi.o(i.spi_event_handler) refers to spi.o(.bss) for m_rx_buf
+    spi.o(.constdata) refers to spi.o(i.SpiMaster) for SpiMaster
+    boards.o(i.bsp_board_button_idx_to_pin) refers to boards.o(.constdata) for m_board_btn_list
+    boards.o(i.bsp_board_button_state_get) refers to boards.o(.constdata) for m_board_btn_list
+    boards.o(i.bsp_board_buttons_init) refers to boards.o(i.nrf_gpio_cfg) for nrf_gpio_cfg
+    boards.o(i.bsp_board_buttons_init) refers to boards.o(.constdata) for m_board_btn_list
+    boards.o(i.bsp_board_init) refers to boards.o(i.bsp_board_leds_init) for bsp_board_leds_init
+    boards.o(i.bsp_board_init) refers to boards.o(i.bsp_board_buttons_init) for bsp_board_buttons_init
+    boards.o(i.bsp_board_led_idx_to_pin) refers to boards.o(.constdata) for m_board_led_list
+    boards.o(i.bsp_board_led_invert) refers to boards.o(.constdata) for m_board_led_list
+    boards.o(i.bsp_board_led_off) refers to boards.o(i.nrf_gpio_pin_write) for nrf_gpio_pin_write
+    boards.o(i.bsp_board_led_off) refers to boards.o(.constdata) for m_board_led_list
+    boards.o(i.bsp_board_led_on) refers to boards.o(i.nrf_gpio_pin_write) for nrf_gpio_pin_write
+    boards.o(i.bsp_board_led_on) refers to boards.o(.constdata) for m_board_led_list
+    boards.o(i.bsp_board_led_state_get) refers to boards.o(.constdata) for m_board_led_list
+    boards.o(i.bsp_board_leds_init) refers to boards.o(i.nrf_gpio_cfg) for nrf_gpio_cfg
+    boards.o(i.bsp_board_leds_init) refers to boards.o(i.bsp_board_leds_off) for bsp_board_leds_off
+    boards.o(i.bsp_board_leds_init) refers to boards.o(.constdata) for m_board_led_list
+    boards.o(i.bsp_board_leds_off) refers to boards.o(i.bsp_board_led_off) for bsp_board_led_off
+    boards.o(i.bsp_board_leds_on) refers to boards.o(i.bsp_board_led_on) for bsp_board_led_on
+    boards.o(i.bsp_board_pin_to_button_idx) refers to boards.o(.constdata) for m_board_btn_list
+    boards.o(i.bsp_board_pin_to_led_idx) refers to boards.o(.constdata) for m_board_led_list
+    nrf_pwr_mgmt.o(i.nrf_pwr_mgmt_init) refers to nrf_section_iter.o(i.nrf_section_iter_init) for nrf_section_iter_init
+    nrf_pwr_mgmt.o(i.nrf_pwr_mgmt_init) refers to nrf_pwr_mgmt.o(.data) for m_shutdown_started
+    nrf_pwr_mgmt.o(i.nrf_pwr_mgmt_init) refers to nrf_pwr_mgmt.o(.constdata) for pwr_mgmt_data
+    nrf_pwr_mgmt.o(i.nrf_pwr_mgmt_init) refers to nrf_pwr_mgmt.o(.bss) for m_handlers_iter
+    nrf_pwr_mgmt.o(i.nrf_pwr_mgmt_shutdown) refers to nrf_atomic.o(i.nrf_atomic_u32_fetch_store) for nrf_atomic_u32_fetch_store
+    nrf_pwr_mgmt.o(i.nrf_pwr_mgmt_shutdown) refers to nrf_pwr_mgmt.o(i.nrf_mtx_unlock) for nrf_mtx_unlock
+    nrf_pwr_mgmt.o(i.nrf_pwr_mgmt_shutdown) refers to nrf_pwr_mgmt.o(i.shutdown_process) for shutdown_process
+    nrf_pwr_mgmt.o(i.nrf_pwr_mgmt_shutdown) refers to nrf_pwr_mgmt.o(.data) for m_sysoff_mtx
+    nrf_pwr_mgmt.o(i.shutdown_process) refers to nrf_section_iter.o(i.nrf_section_iter_next) for nrf_section_iter_next
+    nrf_pwr_mgmt.o(i.shutdown_process) refers to nrf_pwr_mgmt.o(.bss) for m_handlers_iter
+    nrf_pwr_mgmt.o(i.shutdown_process) refers to nrf_pwr_mgmt.o(.data) for m_pwr_mgmt_evt
+    nrf_section_iter.o(i.nrf_section_iter_init) refers to nrf_section_iter.o(i.nrf_section_iter_item_set) for nrf_section_iter_item_set
+    nrf_section_iter.o(i.nrf_section_iter_next) refers to nrf_section_iter.o(i.nrf_section_iter_item_set) for nrf_section_iter_item_set
+    app_util_platform.o(i.app_util_critical_region_enter) refers to app_util_platform.o(i.app_util_disable_irq) for app_util_disable_irq
+    app_util_platform.o(i.app_util_critical_region_exit) refers to app_util_platform.o(i.app_util_enable_irq) for app_util_enable_irq
+    app_util_platform.o(i.app_util_disable_irq) refers to app_util_platform.o(.data) for m_in_critical_region
+    app_util_platform.o(i.app_util_enable_irq) refers to app_util_platform.o(.data) for m_in_critical_region
+    nrfx_uart.o(i.UARTE0_UART0_IRQHandler) refers to nrfx_uart.o(i.uart_irq_handler) for uart_irq_handler
+    nrfx_uart.o(i.UARTE0_UART0_IRQHandler) refers to nrfx_uart.o(.bss) for m_cb
+    nrfx_uart.o(i.apply_config) refers to nrfx_uart.o(i.nrf_gpio_pin_set) for nrf_gpio_pin_set
+    nrfx_uart.o(i.apply_config) refers to nrfx_uart.o(i.nrf_gpio_cfg_output) for nrf_gpio_cfg_output
+    nrfx_uart.o(i.apply_config) refers to nrfx_uart.o(i.nrf_gpio_cfg_input) for nrf_gpio_cfg_input
+    nrfx_uart.o(i.apply_config) refers to nrfx_uart.o(i.nrf_uart_txrx_pins_set) for nrf_uart_txrx_pins_set
+    nrfx_uart.o(i.apply_config) refers to nrfx_uart.o(i.nrf_uart_hwfc_pins_set) for nrf_uart_hwfc_pins_set
+    nrfx_uart.o(i.interrupts_disable) refers to nrfx_uart.o(i.nrf_uart_int_disable) for nrf_uart_int_disable
+    nrfx_uart.o(i.interrupts_disable) refers to nrfx_uart.o(i.nrfx_get_irq_number) for nrfx_get_irq_number
+    nrfx_uart.o(i.interrupts_enable) refers to nrfx_uart.o(i.nrf_uart_event_clear) for nrf_uart_event_clear
+    nrfx_uart.o(i.interrupts_enable) refers to nrfx_uart.o(i.nrf_uart_int_enable) for nrf_uart_int_enable
+    nrfx_uart.o(i.interrupts_enable) refers to nrfx_uart.o(i.nrfx_get_irq_number) for nrfx_get_irq_number
+    nrfx_uart.o(i.nrf_gpio_cfg_default) refers to nrfx_uart.o(i.nrf_gpio_cfg) for nrf_gpio_cfg
+    nrfx_uart.o(i.nrf_gpio_cfg_input) refers to nrfx_uart.o(i.nrf_gpio_cfg) for nrf_gpio_cfg
+    nrfx_uart.o(i.nrf_gpio_cfg_output) refers to nrfx_uart.o(i.nrf_gpio_cfg) for nrf_gpio_cfg
+    nrfx_uart.o(i.nrfx_uart_errorsrc_get) refers to nrfx_uart.o(i.nrf_uart_event_clear) for nrf_uart_event_clear
+    nrfx_uart.o(i.nrfx_uart_errorsrc_get) refers to nrfx_uart.o(i.nrf_uart_errorsrc_get_and_clear) for nrf_uart_errorsrc_get_and_clear
+    nrfx_uart.o(i.nrfx_uart_init) refers to nrfx_uart.o(i.apply_config) for apply_config
+    nrfx_uart.o(i.nrfx_uart_init) refers to nrfx_uart.o(i.interrupts_enable) for interrupts_enable
+    nrfx_uart.o(i.nrfx_uart_init) refers to nrfx_uart.o(.bss) for m_cb
+    nrfx_uart.o(i.nrfx_uart_rx) refers to nrfx_uart.o(i.nrf_uart_int_disable) for nrf_uart_int_disable
+    nrfx_uart.o(i.nrfx_uart_rx) refers to nrfx_uart.o(i.nrf_uart_int_enable) for nrf_uart_int_enable
+    nrfx_uart.o(i.nrfx_uart_rx) refers to nrfx_uart.o(i.rx_enable) for rx_enable
+    nrfx_uart.o(i.nrfx_uart_rx) refers to nrfx_uart.o(i.nrf_uart_event_clear) for nrf_uart_event_clear
+    nrfx_uart.o(i.nrfx_uart_rx) refers to nrfx_uart.o(i.nrf_uart_event_check) for nrf_uart_event_check
+    nrfx_uart.o(i.nrfx_uart_rx) refers to nrfx_uart.o(i.rx_byte) for rx_byte
+    nrfx_uart.o(i.nrfx_uart_rx) refers to nrfx_uart.o(i.nrf_uart_task_trigger) for nrf_uart_task_trigger
+    nrfx_uart.o(i.nrfx_uart_rx) refers to nrfx_uart.o(.bss) for m_cb
+    nrfx_uart.o(i.nrfx_uart_rx_abort) refers to nrfx_uart.o(i.nrf_uart_int_disable) for nrf_uart_int_disable
+    nrfx_uart.o(i.nrfx_uart_rx_abort) refers to nrfx_uart.o(i.nrf_uart_task_trigger) for nrf_uart_task_trigger
+    nrfx_uart.o(i.nrfx_uart_rx_disable) refers to nrfx_uart.o(i.nrf_uart_task_trigger) for nrf_uart_task_trigger
+    nrfx_uart.o(i.nrfx_uart_rx_disable) refers to nrfx_uart.o(.bss) for m_cb
+    nrfx_uart.o(i.nrfx_uart_rx_enable) refers to nrfx_uart.o(i.rx_enable) for rx_enable
+    nrfx_uart.o(i.nrfx_uart_rx_enable) refers to nrfx_uart.o(.bss) for m_cb
+    nrfx_uart.o(i.nrfx_uart_rx_ready) refers to nrfx_uart.o(i.nrf_uart_event_check) for nrf_uart_event_check
+    nrfx_uart.o(i.nrfx_uart_tx) refers to nrfx_uart.o(i.nrfx_uart_tx_in_progress) for nrfx_uart_tx_in_progress
+    nrfx_uart.o(i.nrfx_uart_tx) refers to nrfx_uart.o(i.nrf_uart_event_clear) for nrf_uart_event_clear
+    nrfx_uart.o(i.nrfx_uart_tx) refers to nrfx_uart.o(i.nrf_uart_task_trigger) for nrf_uart_task_trigger
+    nrfx_uart.o(i.nrfx_uart_tx) refers to nrfx_uart.o(i.tx_byte) for tx_byte
+    nrfx_uart.o(i.nrfx_uart_tx) refers to nrfx_uart.o(i.tx_blocking) for tx_blocking
+    nrfx_uart.o(i.nrfx_uart_tx) refers to nrfx_uart.o(i.nrf_uart_event_check) for nrf_uart_event_check
+    nrfx_uart.o(i.nrfx_uart_tx) refers to nrfx_uart.o(.bss) for m_cb
+    nrfx_uart.o(i.nrfx_uart_tx_abort) refers to nrfx_uart.o(i.nrf_uart_task_trigger) for nrf_uart_task_trigger
+    nrfx_uart.o(i.nrfx_uart_tx_abort) refers to nrfx_uart.o(i.tx_done_event) for tx_done_event
+    nrfx_uart.o(i.nrfx_uart_tx_abort) refers to nrfx_uart.o(.bss) for m_cb
+    nrfx_uart.o(i.nrfx_uart_tx_in_progress) refers to nrfx_uart.o(.bss) for m_cb
+    nrfx_uart.o(i.nrfx_uart_uninit) refers to nrfx_uart.o(i.interrupts_disable) for interrupts_disable
+    nrfx_uart.o(i.nrfx_uart_uninit) refers to nrfx_uart.o(i.pins_to_default) for pins_to_default
+    nrfx_uart.o(i.nrfx_uart_uninit) refers to nrfx_uart.o(.bss) for m_cb
+    nrfx_uart.o(i.pins_to_default) refers to nrfx_uart.o(i.nrf_uart_txrx_pins_set) for nrf_uart_txrx_pins_set
+    nrfx_uart.o(i.pins_to_default) refers to nrfx_uart.o(i.nrf_uart_hwfc_pins_set) for nrf_uart_hwfc_pins_set
+    nrfx_uart.o(i.pins_to_default) refers to nrfx_uart.o(i.nrf_gpio_cfg_default) for nrf_gpio_cfg_default
+    nrfx_uart.o(i.rx_byte) refers to nrfx_uart.o(i.nrf_uart_event_clear) for nrf_uart_event_clear
+    nrfx_uart.o(i.rx_enable) refers to nrfx_uart.o(i.nrf_uart_event_clear) for nrf_uart_event_clear
+    nrfx_uart.o(i.rx_enable) refers to nrfx_uart.o(i.nrf_uart_task_trigger) for nrf_uart_task_trigger
+    nrfx_uart.o(i.tx_blocking) refers to nrfx_uart.o(i.nrf_uart_event_check) for nrf_uart_event_check
+    nrfx_uart.o(i.tx_blocking) refers to nrfx_uart.o(i.tx_byte) for tx_byte
+    nrfx_uart.o(i.tx_byte) refers to nrfx_uart.o(i.nrf_uart_event_clear) for nrf_uart_event_clear
+    nrfx_uart.o(i.uart_irq_handler) refers to nrfx_uart.o(i.nrf_uart_int_enable_check) for nrf_uart_int_enable_check
+    nrfx_uart.o(i.uart_irq_handler) refers to nrfx_uart.o(i.nrf_uart_event_check) for nrf_uart_event_check
+    nrfx_uart.o(i.uart_irq_handler) refers to nrfx_uart.o(i.nrf_uart_event_clear) for nrf_uart_event_clear
+    nrfx_uart.o(i.uart_irq_handler) refers to nrfx_uart.o(i.nrf_uart_int_disable) for nrf_uart_int_disable
+    nrfx_uart.o(i.uart_irq_handler) refers to nrfx_uart.o(i.nrf_uart_task_trigger) for nrf_uart_task_trigger
+    nrfx_uart.o(i.uart_irq_handler) refers to nrfx_uart.o(i.nrf_uart_errorsrc_get_and_clear) for nrf_uart_errorsrc_get_and_clear
+    nrfx_uart.o(i.uart_irq_handler) refers to nrfx_uart.o(i.rx_byte) for rx_byte
+    nrfx_uart.o(i.uart_irq_handler) refers to nrfx_uart.o(i.rx_done_event) for rx_done_event
+    nrfx_uart.o(i.uart_irq_handler) refers to nrfx_uart.o(i.tx_byte) for tx_byte
+    nrfx_uart.o(i.uart_irq_handler) refers to nrfx_uart.o(i.tx_done_event) for tx_done_event
+    nrfx_gpiote.o(i.GPIOTE_IRQHandler) refers to nrfx_gpiote.o(i.nrf_gpiote_event_is_set) for nrf_gpiote_event_is_set
+    nrfx_gpiote.o(i.GPIOTE_IRQHandler) refers to nrfx_gpiote.o(i.nrf_gpiote_event_clear) for nrf_gpiote_event_clear
+    nrfx_gpiote.o(i.GPIOTE_IRQHandler) refers to nrfx_gpiote.o(i.nrf_gpio_ports_read) for nrf_gpio_ports_read
+    nrfx_gpiote.o(i.GPIOTE_IRQHandler) refers to nrfx_gpiote.o(i.channel_handler_get) for channel_handler_get
+    nrfx_gpiote.o(i.GPIOTE_IRQHandler) refers to nrfx_gpiote.o(i.nrf_bitmask_bit_is_set) for nrf_bitmask_bit_is_set
+    nrfx_gpiote.o(i.GPIOTE_IRQHandler) refers to nrfx_gpiote.o(i.channel_port_get) for channel_port_get
+    nrfx_gpiote.o(i.GPIOTE_IRQHandler) refers to nrfx_gpiote.o(i.nrf_bitmask_bit_set) for nrf_bitmask_bit_set
+    nrfx_gpiote.o(i.GPIOTE_IRQHandler) refers to nrfx_gpiote.o(i.nrf_gpio_cfg_sense_set) for nrf_gpio_cfg_sense_set
+    nrfx_gpiote.o(i.GPIOTE_IRQHandler) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.channel_free) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.channel_handler_get) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.channel_port_alloc) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.channel_port_get) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.nrf_gpio_cfg_default) refers to nrfx_gpiote.o(i.nrf_gpio_cfg) for nrf_gpio_cfg
+    nrfx_gpiote.o(i.nrf_gpio_ports_read) refers to nrfx_gpiote.o(.constdata) for .constdata
+    nrfx_gpiote.o(i.nrf_gpiote_event_clear) refers to nrfx_gpiote.o(i.nrf_gpiote_event_addr_get) for nrf_gpiote_event_addr_get
+    nrfx_gpiote.o(i.nrf_gpiote_event_is_set) refers to nrfx_gpiote.o(i.nrf_gpiote_event_addr_get) for nrf_gpiote_event_addr_get
+    nrfx_gpiote.o(i.nrfx_gpiote_clr_task_addr_get) refers to nrfx_gpiote.o(i.channel_port_get) for channel_port_get
+    nrfx_gpiote.o(i.nrfx_gpiote_clr_task_addr_get) refers to nrfx_gpiote.o(i.nrf_gpiote_task_addr_get) for nrf_gpiote_task_addr_get
+    nrfx_gpiote.o(i.nrfx_gpiote_clr_task_trigger) refers to nrfx_gpiote.o(i.channel_port_get) for channel_port_get
+    nrfx_gpiote.o(i.nrfx_gpiote_in_event_addr_get) refers to nrfx_gpiote.o(i.pin_in_use_by_te) for pin_in_use_by_te
+    nrfx_gpiote.o(i.nrfx_gpiote_in_event_addr_get) refers to nrfx_gpiote.o(i.channel_port_get) for channel_port_get
+    nrfx_gpiote.o(i.nrfx_gpiote_in_event_addr_get) refers to nrfx_gpiote.o(i.nrf_gpiote_event_addr_get) for nrf_gpiote_event_addr_get
+    nrfx_gpiote.o(i.nrfx_gpiote_in_event_disable) refers to nrfx_gpiote.o(i.pin_in_use_by_port) for pin_in_use_by_port
+    nrfx_gpiote.o(i.nrfx_gpiote_in_event_disable) refers to nrfx_gpiote.o(i.nrf_gpio_cfg_sense_set) for nrf_gpio_cfg_sense_set
+    nrfx_gpiote.o(i.nrfx_gpiote_in_event_disable) refers to nrfx_gpiote.o(i.pin_in_use_by_te) for pin_in_use_by_te
+    nrfx_gpiote.o(i.nrfx_gpiote_in_event_disable) refers to nrfx_gpiote.o(i.channel_port_get) for channel_port_get
+    nrfx_gpiote.o(i.nrfx_gpiote_in_event_enable) refers to nrfx_gpiote.o(i.pin_in_use_by_port) for pin_in_use_by_port
+    nrfx_gpiote.o(i.nrfx_gpiote_in_event_enable) refers to nrfx_gpiote.o(i.channel_port_get) for channel_port_get
+    nrfx_gpiote.o(i.nrfx_gpiote_in_event_enable) refers to nrfx_gpiote.o(i.nrf_gpio_pin_read) for nrf_gpio_pin_read
+    nrfx_gpiote.o(i.nrfx_gpiote_in_event_enable) refers to nrfx_gpiote.o(i.nrf_gpio_cfg_sense_set) for nrf_gpio_cfg_sense_set
+    nrfx_gpiote.o(i.nrfx_gpiote_in_event_enable) refers to nrfx_gpiote.o(i.pin_in_use_by_te) for pin_in_use_by_te
+    nrfx_gpiote.o(i.nrfx_gpiote_in_event_enable) refers to nrfx_gpiote.o(i.nrf_gpiote_event_clear) for nrf_gpiote_event_clear
+    nrfx_gpiote.o(i.nrfx_gpiote_in_event_enable) refers to nrfx_gpiote.o(i.channel_handler_get) for channel_handler_get
+    nrfx_gpiote.o(i.nrfx_gpiote_in_event_enable) refers to nrfx_gpiote.o(i.nrf_gpiote_int_enable) for nrf_gpiote_int_enable
+    nrfx_gpiote.o(i.nrfx_gpiote_in_event_enable) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.nrfx_gpiote_in_init) refers to nrfx_gpiote.o(i.pin_in_use_by_gpiote) for pin_in_use_by_gpiote
+    nrfx_gpiote.o(i.nrfx_gpiote_in_init) refers to nrfx_gpiote.o(i.channel_port_alloc) for channel_port_alloc
+    nrfx_gpiote.o(i.nrfx_gpiote_in_init) refers to nrfx_gpiote.o(i.nrf_gpio_cfg) for nrf_gpio_cfg
+    nrfx_gpiote.o(i.nrfx_gpiote_in_init) refers to nrfx_gpiote.o(i.pin_configured_set) for pin_configured_set
+    nrfx_gpiote.o(i.nrfx_gpiote_in_init) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.nrfx_gpiote_in_is_set) refers to nrfx_gpiote.o(i.nrf_gpio_pin_read) for nrf_gpio_pin_read
+    nrfx_gpiote.o(i.nrfx_gpiote_in_uninit) refers to nrfx_gpiote.o(i.nrfx_gpiote_in_event_disable) for nrfx_gpiote_in_event_disable
+    nrfx_gpiote.o(i.nrfx_gpiote_in_uninit) refers to nrfx_gpiote.o(i.pin_in_use_by_te) for pin_in_use_by_te
+    nrfx_gpiote.o(i.nrfx_gpiote_in_uninit) refers to nrfx_gpiote.o(i.channel_port_get) for channel_port_get
+    nrfx_gpiote.o(i.nrfx_gpiote_in_uninit) refers to nrfx_gpiote.o(i.nrf_gpiote_te_default) for nrf_gpiote_te_default
+    nrfx_gpiote.o(i.nrfx_gpiote_in_uninit) refers to nrfx_gpiote.o(i.pin_configured_check) for pin_configured_check
+    nrfx_gpiote.o(i.nrfx_gpiote_in_uninit) refers to nrfx_gpiote.o(i.nrf_gpio_cfg_default) for nrf_gpio_cfg_default
+    nrfx_gpiote.o(i.nrfx_gpiote_in_uninit) refers to nrfx_gpiote.o(i.pin_configured_clear) for pin_configured_clear
+    nrfx_gpiote.o(i.nrfx_gpiote_in_uninit) refers to nrfx_gpiote.o(i.channel_free) for channel_free
+    nrfx_gpiote.o(i.nrfx_gpiote_in_uninit) refers to nrfx_gpiote.o(i.pin_in_use_clear) for pin_in_use_clear
+    nrfx_gpiote.o(i.nrfx_gpiote_init) refers to nrfx_gpiote.o(i.pin_in_use_clear) for pin_in_use_clear
+    nrfx_gpiote.o(i.nrfx_gpiote_init) refers to nrfx_gpiote.o(i.channel_free) for channel_free
+    nrfx_gpiote.o(i.nrfx_gpiote_init) refers to nrfx_gpiote.o(i.nrf_gpiote_event_clear) for nrf_gpiote_event_clear
+    nrfx_gpiote.o(i.nrfx_gpiote_init) refers to nrfx_gpiote.o(i.nrf_gpiote_int_enable) for nrf_gpiote_int_enable
+    nrfx_gpiote.o(i.nrfx_gpiote_init) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.nrfx_gpiote_is_init) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.nrfx_gpiote_out_clear) refers to nrfx_gpiote.o(i.nrf_gpio_pin_clear) for nrf_gpio_pin_clear
+    nrfx_gpiote.o(i.nrfx_gpiote_out_init) refers to nrfx_gpiote.o(i.channel_port_alloc) for channel_port_alloc
+    nrfx_gpiote.o(i.nrfx_gpiote_out_init) refers to nrfx_gpiote.o(i.nrf_gpio_pin_set) for nrf_gpio_pin_set
+    nrfx_gpiote.o(i.nrfx_gpiote_out_init) refers to nrfx_gpiote.o(i.nrf_gpio_pin_clear) for nrf_gpio_pin_clear
+    nrfx_gpiote.o(i.nrfx_gpiote_out_init) refers to nrfx_gpiote.o(i.nrf_gpio_cfg) for nrf_gpio_cfg
+    nrfx_gpiote.o(i.nrfx_gpiote_out_init) refers to nrfx_gpiote.o(i.pin_configured_set) for pin_configured_set
+    nrfx_gpiote.o(i.nrfx_gpiote_out_init) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.nrfx_gpiote_out_set) refers to nrfx_gpiote.o(i.nrf_gpio_pin_set) for nrf_gpio_pin_set
+    nrfx_gpiote.o(i.nrfx_gpiote_out_task_addr_get) refers to nrfx_gpiote.o(i.channel_port_get) for channel_port_get
+    nrfx_gpiote.o(i.nrfx_gpiote_out_task_addr_get) refers to nrfx_gpiote.o(i.nrf_gpiote_task_addr_get) for nrf_gpiote_task_addr_get
+    nrfx_gpiote.o(i.nrfx_gpiote_out_task_disable) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.nrfx_gpiote_out_task_enable) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.nrfx_gpiote_out_task_force) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.nrfx_gpiote_out_task_trigger) refers to nrfx_gpiote.o(i.channel_port_get) for channel_port_get
+    nrfx_gpiote.o(i.nrfx_gpiote_out_uninit) refers to nrfx_gpiote.o(i.pin_in_use_by_te) for pin_in_use_by_te
+    nrfx_gpiote.o(i.nrfx_gpiote_out_uninit) refers to nrfx_gpiote.o(i.channel_port_get) for channel_port_get
+    nrfx_gpiote.o(i.nrfx_gpiote_out_uninit) refers to nrfx_gpiote.o(i.channel_free) for channel_free
+    nrfx_gpiote.o(i.nrfx_gpiote_out_uninit) refers to nrfx_gpiote.o(i.nrf_gpiote_te_default) for nrf_gpiote_te_default
+    nrfx_gpiote.o(i.nrfx_gpiote_out_uninit) refers to nrfx_gpiote.o(i.pin_in_use_clear) for pin_in_use_clear
+    nrfx_gpiote.o(i.nrfx_gpiote_out_uninit) refers to nrfx_gpiote.o(i.pin_configured_check) for pin_configured_check
+    nrfx_gpiote.o(i.nrfx_gpiote_out_uninit) refers to nrfx_gpiote.o(i.nrf_gpio_cfg_default) for nrf_gpio_cfg_default
+    nrfx_gpiote.o(i.nrfx_gpiote_out_uninit) refers to nrfx_gpiote.o(i.pin_configured_clear) for pin_configured_clear
+    nrfx_gpiote.o(i.nrfx_gpiote_set_task_addr_get) refers to nrfx_gpiote.o(i.channel_port_get) for channel_port_get
+    nrfx_gpiote.o(i.nrfx_gpiote_set_task_addr_get) refers to nrfx_gpiote.o(i.nrf_gpiote_task_addr_get) for nrf_gpiote_task_addr_get
+    nrfx_gpiote.o(i.nrfx_gpiote_set_task_trigger) refers to nrfx_gpiote.o(i.channel_port_get) for channel_port_get
+    nrfx_gpiote.o(i.nrfx_gpiote_uninit) refers to nrfx_gpiote.o(i.nrfx_gpiote_out_uninit) for nrfx_gpiote_out_uninit
+    nrfx_gpiote.o(i.nrfx_gpiote_uninit) refers to nrfx_gpiote.o(i.pin_in_use_by_gpiote) for pin_in_use_by_gpiote
+    nrfx_gpiote.o(i.nrfx_gpiote_uninit) refers to nrfx_gpiote.o(i.nrfx_gpiote_in_uninit) for nrfx_gpiote_in_uninit
+    nrfx_gpiote.o(i.nrfx_gpiote_uninit) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.pin_configured_check) refers to nrfx_gpiote.o(i.nrf_bitmask_bit_is_set) for nrf_bitmask_bit_is_set
+    nrfx_gpiote.o(i.pin_configured_check) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.pin_configured_clear) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.pin_configured_set) refers to nrfx_gpiote.o(i.nrf_bitmask_bit_set) for nrf_bitmask_bit_set
+    nrfx_gpiote.o(i.pin_configured_set) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.pin_in_use_by_gpiote) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.pin_in_use_by_port) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.pin_in_use_by_te) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrfx_gpiote.o(i.pin_in_use_clear) refers to nrfx_gpiote.o(.bss) for m_cb
+    nrf_drv_ppi.o(i.nrf_drv_ppi_init) refers to nrf_drv_ppi.o(.data) for m_drv_state
+    nrf_drv_ppi.o(i.nrf_drv_ppi_uninit) refers to nrfx_ppi.o(i.nrfx_ppi_free_all) for nrfx_ppi_free_all
+    nrf_drv_ppi.o(i.nrf_drv_ppi_uninit) refers to nrf_drv_ppi.o(.data) for m_drv_state
+    nrf_drv_uart.o(i.nrf_drv_uart_init) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    nrf_drv_uart.o(i.nrf_drv_uart_init) refers to nrfx_uart.o(i.nrfx_uart_init) for nrfx_uart_init
+    nrf_drv_uart.o(i.nrf_drv_uart_init) refers to nrf_drv_uart.o(.data) for m_handlers
+    nrf_drv_uart.o(i.nrf_drv_uart_init) refers to nrf_drv_uart.o(i.uart_evt_handler) for uart_evt_handler
+    nrf_drv_uart.o(i.uart_evt_handler) refers to nrf_drv_uart.o(.data) for m_contexts
+    nrfx_atomic.o(i.nrfx_atomic_flag_clear) refers to nrfx_atomic.o(i.nrfx_atomic_u32_and) for nrfx_atomic_u32_and
+    nrfx_atomic.o(i.nrfx_atomic_flag_clear_fetch) refers to nrfx_atomic.o(i.nrfx_atomic_u32_fetch_and) for nrfx_atomic_u32_fetch_and
+    nrfx_atomic.o(i.nrfx_atomic_flag_set) refers to nrfx_atomic.o(i.nrfx_atomic_u32_or) for nrfx_atomic_u32_or
+    nrfx_atomic.o(i.nrfx_atomic_flag_set_fetch) refers to nrfx_atomic.o(i.nrfx_atomic_u32_fetch_or) for nrfx_atomic_u32_fetch_or
+    nrfx_atomic.o(i.nrfx_atomic_u32_add) refers to nrfx_atomic.o(.emb_text) for __asm___13_nrfx_atomic_c_3bd32246__nrfx_atomic_internal_add
+    nrfx_atomic.o(i.nrfx_atomic_u32_and) refers to nrfx_atomic.o(.emb_text) for __asm___13_nrfx_atomic_c_3bd32246__nrfx_atomic_internal_and
+    nrfx_atomic.o(i.nrfx_atomic_u32_cmp_exch) refers to nrfx_atomic.o(.emb_text) for __asm___13_nrfx_atomic_c_3bd32246__nrfx_atomic_internal_cmp_exch
+    nrfx_atomic.o(i.nrfx_atomic_u32_fetch_add) refers to nrfx_atomic.o(.emb_text) for __asm___13_nrfx_atomic_c_3bd32246__nrfx_atomic_internal_add
+    nrfx_atomic.o(i.nrfx_atomic_u32_fetch_and) refers to nrfx_atomic.o(.emb_text) for __asm___13_nrfx_atomic_c_3bd32246__nrfx_atomic_internal_and
+    nrfx_atomic.o(i.nrfx_atomic_u32_fetch_or) refers to nrfx_atomic.o(.emb_text) for __asm___13_nrfx_atomic_c_3bd32246__nrfx_atomic_internal_orr
+    nrfx_atomic.o(i.nrfx_atomic_u32_fetch_store) refers to nrfx_atomic.o(.emb_text) for __asm___13_nrfx_atomic_c_3bd32246__nrfx_atomic_internal_mov
+    nrfx_atomic.o(i.nrfx_atomic_u32_fetch_sub) refers to nrfx_atomic.o(.emb_text) for __asm___13_nrfx_atomic_c_3bd32246__nrfx_atomic_internal_sub
+    nrfx_atomic.o(i.nrfx_atomic_u32_fetch_sub_hs) refers to nrfx_atomic.o(.emb_text) for __asm___13_nrfx_atomic_c_3bd32246__nrfx_atomic_internal_sub_hs
+    nrfx_atomic.o(i.nrfx_atomic_u32_fetch_xor) refers to nrfx_atomic.o(.emb_text) for __asm___13_nrfx_atomic_c_3bd32246__nrfx_atomic_internal_eor
+    nrfx_atomic.o(i.nrfx_atomic_u32_or) refers to nrfx_atomic.o(.emb_text) for __asm___13_nrfx_atomic_c_3bd32246__nrfx_atomic_internal_orr
+    nrfx_atomic.o(i.nrfx_atomic_u32_store) refers to nrfx_atomic.o(.emb_text) for __asm___13_nrfx_atomic_c_3bd32246__nrfx_atomic_internal_mov
+    nrfx_atomic.o(i.nrfx_atomic_u32_sub) refers to nrfx_atomic.o(.emb_text) for __asm___13_nrfx_atomic_c_3bd32246__nrfx_atomic_internal_sub
+    nrfx_atomic.o(i.nrfx_atomic_u32_sub_hs) refers to nrfx_atomic.o(.emb_text) for __asm___13_nrfx_atomic_c_3bd32246__nrfx_atomic_internal_sub_hs
+    nrfx_atomic.o(i.nrfx_atomic_u32_xor) refers to nrfx_atomic.o(.emb_text) for __asm___13_nrfx_atomic_c_3bd32246__nrfx_atomic_internal_eor
+    nrfx_ppi.o(i.is_allocated_channel) refers to nrfx_ppi.o(i.nrfx_ppi_channel_to_mask) for nrfx_ppi_channel_to_mask
+    nrfx_ppi.o(i.is_allocated_channel) refers to nrfx_ppi.o(.data) for m_channels_allocated
+    nrfx_ppi.o(i.is_allocated_group) refers to nrfx_ppi.o(i.group_to_mask) for group_to_mask
+    nrfx_ppi.o(i.is_allocated_group) refers to nrfx_ppi.o(.data) for m_groups_allocated
+    nrfx_ppi.o(i.is_app_channel) refers to nrfx_ppi.o(i.nrfx_ppi_channel_to_mask) for nrfx_ppi_channel_to_mask
+    nrfx_ppi.o(i.is_app_group) refers to nrfx_ppi.o(i.group_to_mask) for group_to_mask
+    nrfx_ppi.o(i.is_programmable_app_channel) refers to nrfx_ppi.o(i.nrfx_ppi_channel_to_mask) for nrfx_ppi_channel_to_mask
+    nrfx_ppi.o(i.nrfx_ppi_channel_alloc) refers to app_util_platform.o(i.app_util_critical_region_enter) for app_util_critical_region_enter
+    nrfx_ppi.o(i.nrfx_ppi_channel_alloc) refers to nrfx_ppi.o(i.nrfx_ppi_channel_to_mask) for nrfx_ppi_channel_to_mask
+    nrfx_ppi.o(i.nrfx_ppi_channel_alloc) refers to nrfx_ppi.o(i.is_allocated_channel) for is_allocated_channel
+    nrfx_ppi.o(i.nrfx_ppi_channel_alloc) refers to app_util_platform.o(i.app_util_critical_region_exit) for app_util_critical_region_exit
+    nrfx_ppi.o(i.nrfx_ppi_channel_alloc) refers to nrfx_ppi.o(.data) for m_channels_allocated
+    nrfx_ppi.o(i.nrfx_ppi_channel_assign) refers to nrfx_ppi.o(i.is_programmable_app_channel) for is_programmable_app_channel
+    nrfx_ppi.o(i.nrfx_ppi_channel_assign) refers to nrfx_ppi.o(i.is_allocated_channel) for is_allocated_channel
+    nrfx_ppi.o(i.nrfx_ppi_channel_disable) refers to nrfx_ppi.o(i.is_app_channel) for is_app_channel
+    nrfx_ppi.o(i.nrfx_ppi_channel_disable) refers to nrfx_ppi.o(i.is_programmable_app_channel) for is_programmable_app_channel
+    nrfx_ppi.o(i.nrfx_ppi_channel_disable) refers to nrfx_ppi.o(i.is_allocated_channel) for is_allocated_channel
+    nrfx_ppi.o(i.nrfx_ppi_channel_disable) refers to nrfx_ppi.o(i.nrf_ppi_channel_disable) for nrf_ppi_channel_disable
+    nrfx_ppi.o(i.nrfx_ppi_channel_enable) refers to nrfx_ppi.o(i.is_app_channel) for is_app_channel
+    nrfx_ppi.o(i.nrfx_ppi_channel_enable) refers to nrfx_ppi.o(i.is_programmable_app_channel) for is_programmable_app_channel
+    nrfx_ppi.o(i.nrfx_ppi_channel_enable) refers to nrfx_ppi.o(i.is_allocated_channel) for is_allocated_channel
+    nrfx_ppi.o(i.nrfx_ppi_channel_fork_assign) refers to nrfx_ppi.o(i.is_allocated_channel) for is_allocated_channel
+    nrfx_ppi.o(i.nrfx_ppi_channel_free) refers to nrfx_ppi.o(i.is_programmable_app_channel) for is_programmable_app_channel
+    nrfx_ppi.o(i.nrfx_ppi_channel_free) refers to nrfx_ppi.o(i.nrf_ppi_channel_disable) for nrf_ppi_channel_disable
+    nrfx_ppi.o(i.nrfx_ppi_channel_free) refers to app_util_platform.o(i.app_util_critical_region_enter) for app_util_critical_region_enter
+    nrfx_ppi.o(i.nrfx_ppi_channel_free) refers to nrfx_ppi.o(i.nrfx_ppi_channel_to_mask) for nrfx_ppi_channel_to_mask
+    nrfx_ppi.o(i.nrfx_ppi_channel_free) refers to app_util_platform.o(i.app_util_critical_region_exit) for app_util_critical_region_exit
+    nrfx_ppi.o(i.nrfx_ppi_channel_free) refers to nrfx_ppi.o(.data) for m_channels_allocated
+    nrfx_ppi.o(i.nrfx_ppi_channels_include_in_group) refers to nrfx_ppi.o(i.is_app_group) for is_app_group
+    nrfx_ppi.o(i.nrfx_ppi_channels_include_in_group) refers to nrfx_ppi.o(i.is_allocated_group) for is_allocated_group
+    nrfx_ppi.o(i.nrfx_ppi_channels_include_in_group) refers to app_util_platform.o(i.app_util_critical_region_enter) for app_util_critical_region_enter
+    nrfx_ppi.o(i.nrfx_ppi_channels_include_in_group) refers to app_util_platform.o(i.app_util_critical_region_exit) for app_util_critical_region_exit
+    nrfx_ppi.o(i.nrfx_ppi_channels_remove_from_group) refers to nrfx_ppi.o(i.is_app_group) for is_app_group
+    nrfx_ppi.o(i.nrfx_ppi_channels_remove_from_group) refers to nrfx_ppi.o(i.is_allocated_group) for is_allocated_group
+    nrfx_ppi.o(i.nrfx_ppi_channels_remove_from_group) refers to app_util_platform.o(i.app_util_critical_region_enter) for app_util_critical_region_enter
+    nrfx_ppi.o(i.nrfx_ppi_channels_remove_from_group) refers to app_util_platform.o(i.app_util_critical_region_exit) for app_util_critical_region_exit
+    nrfx_ppi.o(i.nrfx_ppi_free_all) refers to nrfx_ppi.o(i.group_to_mask) for group_to_mask
+    nrfx_ppi.o(i.nrfx_ppi_free_all) refers to nrfx_ppi.o(.data) for m_channels_allocated
+    nrfx_ppi.o(i.nrfx_ppi_group_alloc) refers to app_util_platform.o(i.app_util_critical_region_enter) for app_util_critical_region_enter
+    nrfx_ppi.o(i.nrfx_ppi_group_alloc) refers to nrfx_ppi.o(i.group_to_mask) for group_to_mask
+    nrfx_ppi.o(i.nrfx_ppi_group_alloc) refers to nrfx_ppi.o(i.is_allocated_group) for is_allocated_group
+    nrfx_ppi.o(i.nrfx_ppi_group_alloc) refers to app_util_platform.o(i.app_util_critical_region_exit) for app_util_critical_region_exit
+    nrfx_ppi.o(i.nrfx_ppi_group_alloc) refers to nrfx_ppi.o(.data) for m_groups_allocated
+    nrfx_ppi.o(i.nrfx_ppi_group_disable) refers to nrfx_ppi.o(i.is_app_group) for is_app_group
+    nrfx_ppi.o(i.nrfx_ppi_group_disable) refers to nrfx_ppi.o(i.nrf_ppi_group_disable) for nrf_ppi_group_disable
+    nrfx_ppi.o(i.nrfx_ppi_group_enable) refers to nrfx_ppi.o(i.is_app_group) for is_app_group
+    nrfx_ppi.o(i.nrfx_ppi_group_enable) refers to nrfx_ppi.o(i.is_allocated_group) for is_allocated_group
+    nrfx_ppi.o(i.nrfx_ppi_group_free) refers to nrfx_ppi.o(i.is_app_group) for is_app_group
+    nrfx_ppi.o(i.nrfx_ppi_group_free) refers to nrfx_ppi.o(i.is_allocated_group) for is_allocated_group
+    nrfx_ppi.o(i.nrfx_ppi_group_free) refers to nrfx_ppi.o(i.nrf_ppi_group_disable) for nrf_ppi_group_disable
+    nrfx_ppi.o(i.nrfx_ppi_group_free) refers to app_util_platform.o(i.app_util_critical_region_enter) for app_util_critical_region_enter
+    nrfx_ppi.o(i.nrfx_ppi_group_free) refers to nrfx_ppi.o(i.group_to_mask) for group_to_mask
+    nrfx_ppi.o(i.nrfx_ppi_group_free) refers to app_util_platform.o(i.app_util_critical_region_exit) for app_util_critical_region_exit
+    nrfx_ppi.o(i.nrfx_ppi_group_free) refers to nrfx_ppi.o(.data) for m_groups_allocated
+    nrf_atomic.o(i.nrf_atomic_flag_clear) refers to nrf_atomic.o(i.nrf_atomic_u32_and) for nrf_atomic_u32_and
+    nrf_atomic.o(i.nrf_atomic_flag_clear_fetch) refers to nrf_atomic.o(i.nrf_atomic_u32_fetch_and) for nrf_atomic_u32_fetch_and
+    nrf_atomic.o(i.nrf_atomic_flag_set) refers to nrf_atomic.o(i.nrf_atomic_u32_or) for nrf_atomic_u32_or
+    nrf_atomic.o(i.nrf_atomic_flag_set_fetch) refers to nrf_atomic.o(i.nrf_atomic_u32_fetch_or) for nrf_atomic_u32_fetch_or
+    nrf_atomic.o(i.nrf_atomic_u32_add) refers to nrf_atomic.o(.emb_text) for __asm___12_nrf_atomic_c_85ca2469__nrf_atomic_internal_add
+    nrf_atomic.o(i.nrf_atomic_u32_and) refers to nrf_atomic.o(.emb_text) for __asm___12_nrf_atomic_c_85ca2469__nrf_atomic_internal_and
+    nrf_atomic.o(i.nrf_atomic_u32_cmp_exch) refers to nrf_atomic.o(.emb_text) for __asm___12_nrf_atomic_c_85ca2469__nrf_atomic_internal_cmp_exch
+    nrf_atomic.o(i.nrf_atomic_u32_fetch_add) refers to nrf_atomic.o(.emb_text) for __asm___12_nrf_atomic_c_85ca2469__nrf_atomic_internal_add
+    nrf_atomic.o(i.nrf_atomic_u32_fetch_and) refers to nrf_atomic.o(.emb_text) for __asm___12_nrf_atomic_c_85ca2469__nrf_atomic_internal_and
+    nrf_atomic.o(i.nrf_atomic_u32_fetch_or) refers to nrf_atomic.o(.emb_text) for __asm___12_nrf_atomic_c_85ca2469__nrf_atomic_internal_orr
+    nrf_atomic.o(i.nrf_atomic_u32_fetch_store) refers to nrf_atomic.o(.emb_text) for __asm___12_nrf_atomic_c_85ca2469__nrf_atomic_internal_mov
+    nrf_atomic.o(i.nrf_atomic_u32_fetch_sub) refers to nrf_atomic.o(.emb_text) for __asm___12_nrf_atomic_c_85ca2469__nrf_atomic_internal_sub
+    nrf_atomic.o(i.nrf_atomic_u32_fetch_sub_hs) refers to nrf_atomic.o(.emb_text) for __asm___12_nrf_atomic_c_85ca2469__nrf_atomic_internal_sub_hs
+    nrf_atomic.o(i.nrf_atomic_u32_fetch_xor) refers to nrf_atomic.o(.emb_text) for __asm___12_nrf_atomic_c_85ca2469__nrf_atomic_internal_eor
+    nrf_atomic.o(i.nrf_atomic_u32_or) refers to nrf_atomic.o(.emb_text) for __asm___12_nrf_atomic_c_85ca2469__nrf_atomic_internal_orr
+    nrf_atomic.o(i.nrf_atomic_u32_store) refers to nrf_atomic.o(.emb_text) for __asm___12_nrf_atomic_c_85ca2469__nrf_atomic_internal_mov
+    nrf_atomic.o(i.nrf_atomic_u32_sub) refers to nrf_atomic.o(.emb_text) for __asm___12_nrf_atomic_c_85ca2469__nrf_atomic_internal_sub
+    nrf_atomic.o(i.nrf_atomic_u32_sub_hs) refers to nrf_atomic.o(.emb_text) for __asm___12_nrf_atomic_c_85ca2469__nrf_atomic_internal_sub_hs
+    nrf_atomic.o(i.nrf_atomic_u32_xor) refers to nrf_atomic.o(.emb_text) for __asm___12_nrf_atomic_c_85ca2469__nrf_atomic_internal_eor
+    nrfx_twi.o(i.SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler) refers to nrfx_twi.o(i.twi_irq_handler) for twi_irq_handler
+    nrfx_twi.o(i.SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler) refers to nrfx_twi.o(.bss) for m_cb
+    nrfx_twi.o(i.nrf_gpio_cfg_default) refers to nrfx_twi.o(i.nrf_gpio_cfg) for nrf_gpio_cfg
+    nrfx_twi.o(i.nrfx_twi_data_count_get) refers to nrfx_twi.o(.bss) for m_cb
+    nrfx_twi.o(i.nrfx_twi_disable) refers to nrfx_twi.o(i.nrf_twi_int_disable) for nrf_twi_int_disable
+    nrfx_twi.o(i.nrfx_twi_disable) refers to nrfx_twi.o(.bss) for m_cb
+    nrfx_twi.o(i.nrfx_twi_enable) refers to nrfx_twi.o(.bss) for m_cb
+    nrfx_twi.o(i.nrfx_twi_init) refers to nrfx_twi.o(i.nrf_gpio_cfg) for nrf_gpio_cfg
+    nrfx_twi.o(i.nrfx_twi_init) refers to nrfx_twi.o(i.nrfx_get_irq_number) for nrfx_get_irq_number
+    nrfx_twi.o(i.nrfx_twi_init) refers to nrfx_twi.o(.bss) for m_cb
+    nrfx_twi.o(i.nrfx_twi_is_busy) refers to nrfx_twi.o(.bss) for m_cb
+    nrfx_twi.o(i.nrfx_twi_rx) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    nrfx_twi.o(i.nrfx_twi_rx) refers to nrfx_twi.o(i.nrfx_twi_xfer) for nrfx_twi_xfer
+    nrfx_twi.o(i.nrfx_twi_rx) refers to nrfx_twi.o(.constdata) for .constdata
+    nrfx_twi.o(i.nrfx_twi_tx) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    nrfx_twi.o(i.nrfx_twi_tx) refers to nrfx_twi.o(i.nrfx_twi_xfer) for nrfx_twi_xfer
+    nrfx_twi.o(i.nrfx_twi_uninit) refers to nrfx_twi.o(i.nrfx_get_irq_number) for nrfx_get_irq_number
+    nrfx_twi.o(i.nrfx_twi_uninit) refers to nrfx_twi.o(i.nrfx_twi_disable) for nrfx_twi_disable
+    nrfx_twi.o(i.nrfx_twi_uninit) refers to nrfx_twi.o(i.nrf_gpio_cfg_default) for nrf_gpio_cfg_default
+    nrfx_twi.o(i.nrfx_twi_uninit) refers to nrfx_twi.o(.bss) for m_cb
+    nrfx_twi.o(i.nrfx_twi_xfer) refers to nrfx_twi.o(i.twi_xfer) for twi_xfer
+    nrfx_twi.o(i.nrfx_twi_xfer) refers to nrfx_twi.o(.bss) for m_cb
+    nrfx_twi.o(i.twi_irq_handler) refers to nrfx_twi.o(i.twi_transfer) for twi_transfer
+    nrfx_twi.o(i.twi_irq_handler) refers to nrfx_twi.o(i.twi_tx_start_transfer) for twi_tx_start_transfer
+    nrfx_twi.o(i.twi_irq_handler) refers to nrfx_twi.o(i.twi_rx_start_transfer) for twi_rx_start_transfer
+    nrfx_twi.o(i.twi_irq_handler) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    nrfx_twi.o(i.twi_irq_handler) refers to nrfx_twi.o(i.nrf_twi_errorsrc_get_and_clear) for nrf_twi_errorsrc_get_and_clear
+    nrfx_twi.o(i.twi_receive_byte) refers to nrfx_twi.o(i.nrf_twi_shorts_set) for nrf_twi_shorts_set
+    nrfx_twi.o(i.twi_receive_byte) refers to nrfx_twi.o(i.nrf_twi_task_trigger) for nrf_twi_task_trigger
+    nrfx_twi.o(i.twi_rx_start_transfer) refers to nrfx_twi.o(i.nrf_twi_event_clear) for nrf_twi_event_clear
+    nrfx_twi.o(i.twi_rx_start_transfer) refers to nrfx_twi.o(i.nrf_twi_shorts_set) for nrf_twi_shorts_set
+    nrfx_twi.o(i.twi_rx_start_transfer) refers to nrfx_twi.o(i.nrf_twi_task_trigger) for nrf_twi_task_trigger
+    nrfx_twi.o(i.twi_rx_start_transfer) refers to nrfx_twi.o(i.nrf_twi_int_enable) for nrf_twi_int_enable
+    nrfx_twi.o(i.twi_rx_start_transfer) refers to nrfx_twi.o(i.twi_transfer) for twi_transfer
+    nrfx_twi.o(i.twi_rx_start_transfer) refers to nrfx_twi.o(i.nrf_twi_errorsrc_get_and_clear) for nrf_twi_errorsrc_get_and_clear
+    nrfx_twi.o(i.twi_rx_start_transfer) refers to nrfx_twi.o(i.twi_process_error) for twi_process_error
+    nrfx_twi.o(i.twi_send_byte) refers to nrfx_twi.o(i.nrf_twi_task_trigger) for nrf_twi_task_trigger
+    nrfx_twi.o(i.twi_transfer) refers to nrfx_twi.o(i.nrf_twi_event_clear) for nrf_twi_event_clear
+    nrfx_twi.o(i.twi_transfer) refers to nrfx_twi.o(i.nrf_twi_event_check) for nrf_twi_event_check
+    nrfx_twi.o(i.twi_transfer) refers to nrfx_twi.o(i.nrf_twi_task_trigger) for nrf_twi_task_trigger
+    nrfx_twi.o(i.twi_transfer) refers to nrfx_twi.o(i.twi_send_byte) for twi_send_byte
+    nrfx_twi.o(i.twi_transfer) refers to nrfx_twi.o(i.twi_receive_byte) for twi_receive_byte
+    nrfx_twi.o(i.twi_tx_start_transfer) refers to nrfx_twi.o(i.nrf_twi_event_clear) for nrf_twi_event_clear
+    nrfx_twi.o(i.twi_tx_start_transfer) refers to nrfx_twi.o(i.nrf_twi_shorts_set) for nrf_twi_shorts_set
+    nrfx_twi.o(i.twi_tx_start_transfer) refers to nrfx_twi.o(i.nrf_twi_task_trigger) for nrf_twi_task_trigger
+    nrfx_twi.o(i.twi_tx_start_transfer) refers to nrfx_twi.o(i.twi_send_byte) for twi_send_byte
+    nrfx_twi.o(i.twi_tx_start_transfer) refers to nrfx_twi.o(i.nrf_twi_int_enable) for nrf_twi_int_enable
+    nrfx_twi.o(i.twi_tx_start_transfer) refers to nrfx_twi.o(i.twi_transfer) for twi_transfer
+    nrfx_twi.o(i.twi_tx_start_transfer) refers to nrfx_twi.o(i.nrf_twi_errorsrc_get_and_clear) for nrf_twi_errorsrc_get_and_clear
+    nrfx_twi.o(i.twi_tx_start_transfer) refers to nrfx_twi.o(i.twi_process_error) for twi_process_error
+    nrfx_twi.o(i.twi_xfer) refers to nrfx_twi.o(i.nrf_twi_int_disable) for nrf_twi_int_disable
+    nrfx_twi.o(i.twi_xfer) refers to nrfx_twi.o(i.nrf_twi_int_enable) for nrf_twi_int_enable
+    nrfx_twi.o(i.twi_xfer) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    nrfx_twi.o(i.twi_xfer) refers to nrfx_twi.o(i.twi_tx_start_transfer) for twi_tx_start_transfer
+    nrfx_twi.o(i.twi_xfer) refers to nrfx_twi.o(i.twi_rx_start_transfer) for twi_rx_start_transfer
+    nrf_drv_twi.o(i.nrf_drv_twi_init) refers to nrf_drv_twi.o(i.twi_clear_bus) for twi_clear_bus
+    nrf_drv_twi.o(i.nrf_drv_twi_init) refers to nrfx_twi.o(i.nrfx_twi_init) for nrfx_twi_init
+    nrf_drv_twi.o(i.nrf_drv_twi_init) refers to nrf_drv_twi.o(.data) for m_handlers
+    nrf_drv_twi.o(i.nrf_drv_twi_init) refers to nrf_drv_twi.o(i.twi_evt_handler) for twi_evt_handler
+    nrf_drv_twi.o(i.nrfx_coredep_delay_us) refers to nrf_drv_twi.o(.constdata) for delay_machine_code
+    nrf_drv_twi.o(i.twi_clear_bus) refers to nrf_drv_twi.o(i.nrf_gpio_pin_set) for nrf_gpio_pin_set
+    nrf_drv_twi.o(i.twi_clear_bus) refers to nrf_drv_twi.o(i.nrfx_coredep_delay_us) for nrfx_coredep_delay_us
+    nrf_drv_twi.o(i.twi_clear_bus) refers to nrf_drv_twi.o(i.nrf_gpio_pin_clear) for nrf_gpio_pin_clear
+    nrf_drv_twi.o(i.twi_evt_handler) refers to nrf_drv_twi.o(.data) for m_contexts
+    nrf_drv_twi.o(i.twim_evt_handler) refers to nrf_drv_twi.o(.data) for m_contexts
+    nrfx_spim.o(i.SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler) refers to nrfx_spim.o(i.irq_handler) for irq_handler
+    nrfx_spim.o(i.SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler) refers to nrfx_spim.o(.bss) for m_cb
+    nrfx_spim.o(i.finish_transfer) refers to nrfx_spim.o(i.nrf_gpio_pin_clear) for nrf_gpio_pin_clear
+    nrfx_spim.o(i.finish_transfer) refers to nrfx_spim.o(i.nrf_gpio_pin_set) for nrf_gpio_pin_set
+    nrfx_spim.o(i.irq_handler) refers to nrfx_spim.o(i.nrf_spim_event_check) for nrf_spim_event_check
+    nrfx_spim.o(i.irq_handler) refers to nrfx_spim.o(i.nrf_spim_event_clear) for nrf_spim_event_clear
+    nrfx_spim.o(i.irq_handler) refers to nrfx_spim.o(i.nrf_spim_int_disable) for nrf_spim_int_disable
+    nrfx_spim.o(i.irq_handler) refers to nrfx_spim.o(i.nrf_spim_task_trigger) for nrf_spim_task_trigger
+    nrfx_spim.o(i.irq_handler) refers to nrfx_spim.o(i.finish_transfer) for finish_transfer
+    nrfx_spim.o(i.nrf_gpio_cfg_output) refers to nrfx_spim.o(i.nrf_gpio_cfg) for nrf_gpio_cfg
+    nrfx_spim.o(i.nrfx_spim_abort) refers to nrfx_spim.o(i.nrf_spim_task_trigger) for nrf_spim_task_trigger
+    nrfx_spim.o(i.nrfx_spim_abort) refers to nrfx_spim.o(i.nrf_spim_event_check) for nrf_spim_event_check
+    nrfx_spim.o(i.nrfx_spim_abort) refers to nrfx_spim.o(.bss) for m_cb
+    nrfx_spim.o(i.nrfx_spim_init) refers to nrfx_spim.o(i.nrf_gpio_pin_clear) for nrf_gpio_pin_clear
+    nrfx_spim.o(i.nrfx_spim_init) refers to nrfx_spim.o(i.nrf_gpio_pin_set) for nrf_gpio_pin_set
+    nrfx_spim.o(i.nrfx_spim_init) refers to nrfx_spim.o(i.nrf_gpio_cfg) for nrf_gpio_cfg
+    nrfx_spim.o(i.nrfx_spim_init) refers to nrfx_spim.o(i.nrf_gpio_cfg_output) for nrf_gpio_cfg_output
+    nrfx_spim.o(i.nrfx_spim_init) refers to nrfx_spim.o(i.nrf_spim_int_enable) for nrf_spim_int_enable
+    nrfx_spim.o(i.nrfx_spim_init) refers to nrfx_spim.o(i.nrfx_get_irq_number) for nrfx_get_irq_number
+    nrfx_spim.o(i.nrfx_spim_init) refers to nrfx_spim.o(.bss) for m_cb
+    nrfx_spim.o(i.nrfx_spim_uninit) refers to nrfx_spim.o(i.nrfx_get_irq_number) for nrfx_get_irq_number
+    nrfx_spim.o(i.nrfx_spim_uninit) refers to nrfx_spim.o(i.nrf_spim_int_disable) for nrf_spim_int_disable
+    nrfx_spim.o(i.nrfx_spim_uninit) refers to nrfx_spim.o(i.nrf_spim_task_trigger) for nrf_spim_task_trigger
+    nrfx_spim.o(i.nrfx_spim_uninit) refers to nrfx_spim.o(i.nrf_spim_event_check) for nrf_spim_event_check
+    nrfx_spim.o(i.nrfx_spim_uninit) refers to nrfx_spim.o(i.nrf_gpio_cfg) for nrf_gpio_cfg
+    nrfx_spim.o(i.nrfx_spim_uninit) refers to nrfx_spim.o(.bss) for m_cb
+    nrfx_spim.o(i.nrfx_spim_xfer) refers to nrfx_spim.o(i.nrf_gpio_pin_set) for nrf_gpio_pin_set
+    nrfx_spim.o(i.nrfx_spim_xfer) refers to nrfx_spim.o(i.nrf_gpio_pin_clear) for nrf_gpio_pin_clear
+    nrfx_spim.o(i.nrfx_spim_xfer) refers to nrfx_spim.o(i.spim_xfer) for spim_xfer
+    nrfx_spim.o(i.nrfx_spim_xfer) refers to nrfx_spim.o(.bss) for m_cb
+    nrfx_spim.o(i.spim_xfer) refers to nrfx_spim.o(i.nrfx_is_in_ram) for nrfx_is_in_ram
+    nrfx_spim.o(i.spim_xfer) refers to nrfx_spim.o(i.nrf_spim_tx_buffer_set) for nrf_spim_tx_buffer_set
+    nrfx_spim.o(i.spim_xfer) refers to nrfx_spim.o(i.nrf_spim_rx_buffer_set) for nrf_spim_rx_buffer_set
+    nrfx_spim.o(i.spim_xfer) refers to nrfx_spim.o(i.nrf_spim_event_clear) for nrf_spim_event_clear
+    nrfx_spim.o(i.spim_xfer) refers to nrfx_spim.o(i.nrf_spim_task_trigger) for nrf_spim_task_trigger
+    nrfx_spim.o(i.spim_xfer) refers to nrfx_spim.o(i.nrf_spim_int_enable) for nrf_spim_int_enable
+    nrfx_spim.o(i.spim_xfer) refers to nrfx_spim.o(i.nrf_spim_event_check) for nrf_spim_event_check
+    nrfx_spim.o(i.spim_xfer) refers to nrfx_spim.o(i.nrf_gpio_pin_clear) for nrf_gpio_pin_clear
+    nrfx_spim.o(i.spim_xfer) refers to nrfx_spim.o(i.nrf_gpio_pin_set) for nrf_gpio_pin_set
+    nrfx_spim.o(i.spim_xfer) refers to nrfx_spim.o(i.nrf_spim_int_disable) for nrf_spim_int_disable
+    nrf_drv_spi.o(i.nrf_drv_spi_init) refers to nrfx_spim.o(i.nrfx_spim_init) for nrfx_spim_init
+    nrf_drv_spi.o(i.nrf_drv_spi_init) refers to nrf_drv_spi.o(.bss) for m_handlers
+    nrf_drv_spi.o(i.nrf_drv_spi_init) refers to nrf_drv_spi.o(.constdata) for .constdata
+    nrf_drv_spi.o(i.nrf_drv_spi_init) refers to nrf_drv_spi.o(i.spim_evt_handler) for spim_evt_handler
+    nrf_drv_spi.o(i.spi_evt_handler) refers to nrf_drv_spi.o(.bss) for m_contexts
+    nrf_drv_spi.o(i.spim_evt_handler) refers to nrf_drv_spi.o(.bss) for m_contexts
+    rtx_conf_cm.o(.emb_text) refers to rt_cmsis.o(i.osKernelInitialize) for osKernelInitialize
+    rtx_conf_cm.o(.emb_text) refers to rt_cmsis.o(i.osThreadCreate) for osThreadCreate
+    rtx_conf_cm.o(.emb_text) refers to rt_cmsis.o(i.osKernelStart) for osKernelStart
+    rtx_conf_cm.o(.emb_text) refers to exit.o(.text) for exit
+    rtx_conf_cm.o(.emb_text) refers to rtx_conf_cm.o(.constdata) for os_thread_def_main
+    rtx_conf_cm.o(i.__user_perthread_libspace) refers to rt_task.o(i.rt_tsk_self) for rt_tsk_self
+    rtx_conf_cm.o(i.__user_perthread_libspace) refers to rt_cmsis.o(.data) for os_running
+    rtx_conf_cm.o(i.__user_perthread_libspace) refers to rtx_conf_cm.o(.bss) for .bss
+    rtx_conf_cm.o(i.__user_perthread_libspace) refers to libspace.o(.bss) for __libspace_start
+    rtx_conf_cm.o(i._mutex_acquire) refers to rt_cmsis.o(.data) for os_running
+    rtx_conf_cm.o(i._mutex_acquire) refers to rt_mutex.o(i.rt_mut_wait) for rt_mut_wait
+    rtx_conf_cm.o(i._mutex_initialize) refers to rt_mutex.o(i.rt_mut_init) for rt_mut_init
+    rtx_conf_cm.o(i._mutex_initialize) refers to rtx_conf_cm.o(.data) for .data
+    rtx_conf_cm.o(i._mutex_initialize) refers to rtx_conf_cm.o(.bss) for .bss
+    rtx_conf_cm.o(i._mutex_release) refers to rt_cmsis.o(.data) for os_running
+    rtx_conf_cm.o(i._mutex_release) refers to rt_mutex.o(i.rt_mut_release) for rt_mut_release
+    rtx_conf_cm.o(.constdata) refers to rt_cmsis.o(i.osTimerThread) for osTimerThread
+    rtx_conf_cm.o(.constdata) refers to rtx_conf_cm.o(.bss) for os_messageQ_q_osTimerMessageQ
+    rtx_conf_cm.o(.constdata) refers to main.o(i.main) for main
+    arm_startup_nrf52.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    arm_startup_nrf52.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    arm_startup_nrf52.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    arm_startup_nrf52.o(RESET) refers to arm_startup_nrf52.o(STACK) for __initial_sp
+    arm_startup_nrf52.o(RESET) refers to arm_startup_nrf52.o(.text) for Reset_Handler
+    arm_startup_nrf52.o(RESET) refers to hal_cm4.o(.emb_text) for SVC_Handler
+    arm_startup_nrf52.o(RESET) refers to nrfx_uart.o(i.UARTE0_UART0_IRQHandler) for UARTE0_UART0_IRQHandler
+    arm_startup_nrf52.o(RESET) refers to nrfx_twi.o(i.SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler) for SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler
+    arm_startup_nrf52.o(RESET) refers to nrfx_spim.o(i.SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler) for SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
+    arm_startup_nrf52.o(RESET) refers to nrfx_gpiote.o(i.GPIOTE_IRQHandler) for GPIOTE_IRQHandler
+    arm_startup_nrf52.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    arm_startup_nrf52.o(.text) refers to system_nrf52.o(i.SystemInit) for SystemInit
+    arm_startup_nrf52.o(.text) refers to __main.o(!!!main) for __main
+    arm_startup_nrf52.o(.text) refers to arm_startup_nrf52.o(HEAP) for Heap_Mem
+    arm_startup_nrf52.o(.text) refers to arm_startup_nrf52.o(STACK) for Stack_Mem
+    system_nrf52.o(i.SystemCoreClockUpdate) refers to system_nrf52.o(.data) for SystemCoreClock
+    system_nrf52.o(i.SystemInit) refers to system_nrf52.o(i.errata_12) for errata_12
+    system_nrf52.o(i.SystemInit) refers to system_nrf52.o(i.errata_16) for errata_16
+    system_nrf52.o(i.SystemInit) refers to system_nrf52.o(i.errata_31) for errata_31
+    system_nrf52.o(i.SystemInit) refers to system_nrf52.o(i.errata_32) for errata_32
+    system_nrf52.o(i.SystemInit) refers to system_nrf52.o(i.errata_36) for errata_36
+    system_nrf52.o(i.SystemInit) refers to system_nrf52.o(i.errata_37) for errata_37
+    system_nrf52.o(i.SystemInit) refers to system_nrf52.o(i.errata_57) for errata_57
+    system_nrf52.o(i.SystemInit) refers to system_nrf52.o(i.errata_66) for errata_66
+    system_nrf52.o(i.SystemInit) refers to system_nrf52.o(i.errata_108) for errata_108
+    system_nrf52.o(i.SystemInit) refers to system_nrf52.o(i.errata_136) for errata_136
+    system_nrf52.o(i.SystemInit) refers to system_nrf52.o(i.errata_182) for errata_182
+    system_nrf52.o(i.SystemInit) refers to system_nrf52.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    rt_cmsis.o(i.isrMessageGet) refers to rt_mailbox.o(i.isr_mbx_receive) for isr_mbx_receive
+    rt_cmsis.o(i.isrMessagePut) refers to rt_mailbox.o(i.rt_mbx_check) for rt_mbx_check
+    rt_cmsis.o(i.isrMessagePut) refers to rt_mailbox.o(i.isr_mbx_send) for isr_mbx_send
+    rt_cmsis.o(i.isrSemaphoreRelease) refers to rt_cmsis.o(i.rt_id2obj) for rt_id2obj
+    rt_cmsis.o(i.isrSemaphoreRelease) refers to rt_semaphore.o(i.isr_sem_send) for isr_sem_send
+    rt_cmsis.o(i.isrSignalSet) refers to rt_cmsis.o(i.rt_tid2ptcb) for rt_tid2ptcb
+    rt_cmsis.o(i.isrSignalSet) refers to rt_event.o(i.isr_evt_set) for isr_evt_set
+    rt_cmsis.o(i.osDelay) refers to rt_cmsis.o(i.svcDelay) for svcDelay
+    rt_cmsis.o(i.osKernelInitialize) refers to rt_cmsis.o(i.svcKernelInitialize) for svcKernelInitialize
+    rt_cmsis.o(i.osKernelRunning) refers to rt_cmsis.o(i.svcKernelRunning) for svcKernelRunning
+    rt_cmsis.o(i.osKernelRunning) refers to rt_cmsis.o(.data) for .data
+    rt_cmsis.o(i.osKernelStart) refers to rtx_conf_cm.o(.constdata) for os_flags
+    rt_cmsis.o(i.osKernelStart) refers to rt_cmsis.o(i.svcKernelStart) for svcKernelStart
+    rt_cmsis.o(i.osKernelSysTick) refers to rt_cmsis.o(i.svcKernelSysTick) for svcKernelSysTick
+    rt_cmsis.o(i.osMailAlloc) refers to rt_cmsis.o(i.sysMailAlloc) for sysMailAlloc
+    rt_cmsis.o(i.osMailCAlloc) refers to rt_cmsis.o(i.sysMailAlloc) for sysMailAlloc
+    rt_cmsis.o(i.osMailCAlloc) refers to rt_cmsis.o(i.rt_clr_box) for rt_clr_box
+    rt_cmsis.o(i.osMailCreate) refers to rt_cmsis.o(i.svcMailCreate) for svcMailCreate
+    rt_cmsis.o(i.osMailCreate) refers to rt_cmsis.o(.data) for .data
+    rt_cmsis.o(i.osMailFree) refers to rt_cmsis.o(i.sysMailFree) for sysMailFree
+    rt_cmsis.o(i.osMailGet) refers to rt_cmsis.o(i.osMessageGet) for osMessageGet
+    rt_cmsis.o(i.osMailPut) refers to rt_cmsis.o(i.osMessagePut) for osMessagePut
+    rt_cmsis.o(i.osMessageCreate) refers to rt_cmsis.o(i.svcMessageCreate) for svcMessageCreate
+    rt_cmsis.o(i.osMessageCreate) refers to rt_cmsis.o(.data) for .data
+    rt_cmsis.o(i.osMessageGet) refers to rt_cmsis.o(i.isrMessageGet) for isrMessageGet
+    rt_cmsis.o(i.osMessageGet) refers to rt_cmsis.o(i.svcMessageGet) for svcMessageGet
+    rt_cmsis.o(i.osMessagePut) refers to rt_cmsis.o(i.isrMessagePut) for isrMessagePut
+    rt_cmsis.o(i.osMessagePut) refers to rt_cmsis.o(i.svcMessagePut) for svcMessagePut
+    rt_cmsis.o(i.osMutexCreate) refers to rt_cmsis.o(i.svcMutexCreate) for svcMutexCreate
+    rt_cmsis.o(i.osMutexCreate) refers to rt_cmsis.o(.data) for .data
+    rt_cmsis.o(i.osMutexDelete) refers to rt_cmsis.o(i.svcMutexDelete) for svcMutexDelete
+    rt_cmsis.o(i.osMutexRelease) refers to rt_cmsis.o(i.svcMutexRelease) for svcMutexRelease
+    rt_cmsis.o(i.osMutexWait) refers to rt_cmsis.o(i.svcMutexWait) for svcMutexWait
+    rt_cmsis.o(i.osPoolAlloc) refers to rt_cmsis.o(i.sysPoolAlloc) for sysPoolAlloc
+    rt_cmsis.o(i.osPoolCAlloc) refers to rt_cmsis.o(i.rt_clr_box) for rt_clr_box
+    rt_cmsis.o(i.osPoolCAlloc) refers to rt_cmsis.o(i.sysPoolAlloc) for sysPoolAlloc
+    rt_cmsis.o(i.osPoolCreate) refers to rt_cmsis.o(i.svcPoolCreate) for svcPoolCreate
+    rt_cmsis.o(i.osPoolCreate) refers to rt_cmsis.o(.data) for .data
+    rt_cmsis.o(i.osPoolFree) refers to rt_cmsis.o(i.sysPoolFree) for sysPoolFree
+    rt_cmsis.o(i.osSemaphoreCreate) refers to rt_cmsis.o(i.svcSemaphoreCreate) for svcSemaphoreCreate
+    rt_cmsis.o(i.osSemaphoreCreate) refers to rt_cmsis.o(.data) for .data
+    rt_cmsis.o(i.osSemaphoreDelete) refers to rt_cmsis.o(i.svcSemaphoreDelete) for svcSemaphoreDelete
+    rt_cmsis.o(i.osSemaphoreRelease) refers to rt_cmsis.o(i.isrSemaphoreRelease) for isrSemaphoreRelease
+    rt_cmsis.o(i.osSemaphoreRelease) refers to rt_cmsis.o(i.svcSemaphoreRelease) for svcSemaphoreRelease
+    rt_cmsis.o(i.osSemaphoreWait) refers to rt_cmsis.o(i.svcSemaphoreWait) for svcSemaphoreWait
+    rt_cmsis.o(i.osSignalClear) refers to rt_cmsis.o(i.svcSignalClear) for svcSignalClear
+    rt_cmsis.o(i.osSignalSet) refers to rt_cmsis.o(i.isrSignalSet) for isrSignalSet
+    rt_cmsis.o(i.osSignalSet) refers to rt_cmsis.o(i.svcSignalSet) for svcSignalSet
+    rt_cmsis.o(i.osSignalWait) refers to rt_cmsis.o(i.svcSignalWait) for svcSignalWait
+    rt_cmsis.o(i.osThreadCreate) refers to rt_cmsis.o(i.svcThreadCreate) for svcThreadCreate
+    rt_cmsis.o(i.osThreadCreate) refers to rt_cmsis.o(.data) for .data
+    rt_cmsis.o(i.osThreadExit) refers to rt_cmsis.o(i.svcThreadGetId) for svcThreadGetId
+    rt_cmsis.o(i.osThreadExit) refers to rt_cmsis.o(i.svcThreadTerminate) for svcThreadTerminate
+    rt_cmsis.o(i.osThreadGetId) refers to rt_cmsis.o(i.svcThreadGetId) for svcThreadGetId
+    rt_cmsis.o(i.osThreadGetPriority) refers to rt_cmsis.o(i.svcThreadGetPriority) for svcThreadGetPriority
+    rt_cmsis.o(i.osThreadSetPriority) refers to rt_cmsis.o(i.svcThreadSetPriority) for svcThreadSetPriority
+    rt_cmsis.o(i.osThreadTerminate) refers to rt_cmsis.o(i.svcThreadTerminate) for svcThreadTerminate
+    rt_cmsis.o(i.osThreadYield) refers to rt_cmsis.o(i.svcThreadYield) for svcThreadYield
+    rt_cmsis.o(i.osTimerCall) refers to rt_cmsis.o(i.svcTimerCall) for svcTimerCall
+    rt_cmsis.o(i.osTimerCreate) refers to rt_cmsis.o(i.svcTimerCreate) for svcTimerCreate
+    rt_cmsis.o(i.osTimerCreate) refers to rt_cmsis.o(.data) for .data
+    rt_cmsis.o(i.osTimerDelete) refers to rt_cmsis.o(i.svcTimerDelete) for svcTimerDelete
+    rt_cmsis.o(i.osTimerStart) refers to rt_cmsis.o(i.svcTimerStart) for svcTimerStart
+    rt_cmsis.o(i.osTimerStop) refers to rt_cmsis.o(i.svcTimerStop) for svcTimerStop
+    rt_cmsis.o(i.osTimerThread) refers to rt_cmsis.o(i.osMessageGet) for osMessageGet
+    rt_cmsis.o(i.osTimerThread) refers to rt_cmsis.o(i.osTimerCall) for osTimerCall
+    rt_cmsis.o(i.osTimerThread) refers to rtx_conf_cm.o(.data) for osMessageQId_osTimerMessageQ
+    rt_cmsis.o(i.os_resume) refers to rt_system.o(i.rt_resume) for rt_resume
+    rt_cmsis.o(i.os_suspend) refers to rt_system.o(i.rt_suspend) for rt_suspend
+    rt_cmsis.o(i.rt_ms2tick) refers to rtx_conf_cm.o(.constdata) for os_clockrate
+    rt_cmsis.o(i.rt_timer_insert) refers to rt_cmsis.o(.data) for .data
+    rt_cmsis.o(i.rt_timer_remove) refers to rt_cmsis.o(.data) for .data
+    rt_cmsis.o(i.svcDelay) refers to rt_cmsis.o(i.rt_ms2tick) for rt_ms2tick
+    rt_cmsis.o(i.svcDelay) refers to rt_time.o(i.rt_dly_wait) for rt_dly_wait
+    rt_cmsis.o(i.svcKernelInitialize) refers to rt_memory.o(i.rt_init_mem) for rt_init_mem
+    rt_cmsis.o(i.svcKernelInitialize) refers to rt_task.o(i.rt_sys_init) for rt_sys_init
+    rt_cmsis.o(i.svcKernelInitialize) refers to rt_cmsis.o(i.svcMessageCreate) for svcMessageCreate
+    rt_cmsis.o(i.svcKernelInitialize) refers to rt_cmsis.o(i.svcThreadCreate) for svcThreadCreate
+    rt_cmsis.o(i.svcKernelInitialize) refers to rt_cmsis.o(.data) for .data
+    rt_cmsis.o(i.svcKernelInitialize) refers to rtx_conf_cm.o(.bss) for os_stack_mem
+    rt_cmsis.o(i.svcKernelInitialize) refers to rtx_conf_cm.o(.constdata) for os_stack_sz
+    rt_cmsis.o(i.svcKernelInitialize) refers to rt_task.o(.data) for os_tsk
+    rt_cmsis.o(i.svcKernelInitialize) refers to rtx_conf_cm.o(.data) for osMessageQId_osTimerMessageQ
+    rt_cmsis.o(i.svcKernelRunning) refers to rt_cmsis.o(.data) for .data
+    rt_cmsis.o(i.svcKernelStart) refers to rt_task.o(i.rt_tsk_prio) for rt_tsk_prio
+    rt_cmsis.o(i.svcKernelStart) refers to rt_task.o(i.rt_sys_start) for rt_sys_start
+    rt_cmsis.o(i.svcKernelStart) refers to rt_cmsis.o(.data) for .data
+    rt_cmsis.o(i.svcKernelStart) refers to rt_task.o(.data) for os_tsk
+    rt_cmsis.o(i.svcKernelSysTick) refers to rt_system.o(i.os_tick_val) for os_tick_val
+    rt_cmsis.o(i.svcKernelSysTick) refers to rt_system.o(i.os_tick_ovf) for os_tick_ovf
+    rt_cmsis.o(i.svcKernelSysTick) refers to rtx_conf_cm.o(.constdata) for os_trv
+    rt_cmsis.o(i.svcKernelSysTick) refers to rt_time.o(.data) for os_time
+    rt_cmsis.o(i.svcMailCreate) refers to rt_membox.o(i._init_box) for _init_box
+    rt_cmsis.o(i.svcMailCreate) refers to rt_mailbox.o(i.rt_mbx_init) for rt_mbx_init
+    rt_cmsis.o(i.svcMessageCreate) refers to rt_mailbox.o(i.rt_mbx_init) for rt_mbx_init
+    rt_cmsis.o(i.svcMessageGet) refers to rt_cmsis.o(i.rt_ms2tick) for rt_ms2tick
+    rt_cmsis.o(i.svcMessageGet) refers to rt_mailbox.o(i.rt_mbx_wait) for rt_mbx_wait
+    rt_cmsis.o(i.svcMessagePut) refers to rt_cmsis.o(i.rt_ms2tick) for rt_ms2tick
+    rt_cmsis.o(i.svcMessagePut) refers to rt_mailbox.o(i.rt_mbx_send) for rt_mbx_send
+    rt_cmsis.o(i.svcMutexCreate) refers to rt_mutex.o(i.rt_mut_init) for rt_mut_init
+    rt_cmsis.o(i.svcMutexDelete) refers to rt_cmsis.o(i.rt_id2obj) for rt_id2obj
+    rt_cmsis.o(i.svcMutexDelete) refers to rt_mutex.o(i.rt_mut_delete) for rt_mut_delete
+    rt_cmsis.o(i.svcMutexRelease) refers to rt_cmsis.o(i.rt_id2obj) for rt_id2obj
+    rt_cmsis.o(i.svcMutexRelease) refers to rt_mutex.o(i.rt_mut_release) for rt_mut_release
+    rt_cmsis.o(i.svcMutexWait) refers to rt_cmsis.o(i.rt_id2obj) for rt_id2obj
+    rt_cmsis.o(i.svcMutexWait) refers to rt_cmsis.o(i.rt_ms2tick) for rt_ms2tick
+    rt_cmsis.o(i.svcMutexWait) refers to rt_mutex.o(i.rt_mut_wait) for rt_mut_wait
+    rt_cmsis.o(i.svcPoolCreate) refers to rt_membox.o(i._init_box) for _init_box
+    rt_cmsis.o(i.svcSemaphoreCreate) refers to rt_semaphore.o(i.rt_sem_init) for rt_sem_init
+    rt_cmsis.o(i.svcSemaphoreDelete) refers to rt_cmsis.o(i.rt_id2obj) for rt_id2obj
+    rt_cmsis.o(i.svcSemaphoreDelete) refers to rt_semaphore.o(i.rt_sem_delete) for rt_sem_delete
+    rt_cmsis.o(i.svcSemaphoreRelease) refers to rt_cmsis.o(i.rt_id2obj) for rt_id2obj
+    rt_cmsis.o(i.svcSemaphoreRelease) refers to rt_semaphore.o(i.rt_sem_send) for rt_sem_send
+    rt_cmsis.o(i.svcSemaphoreWait) refers to rt_cmsis.o(i.rt_id2obj) for rt_id2obj
+    rt_cmsis.o(i.svcSemaphoreWait) refers to rt_cmsis.o(i.rt_ms2tick) for rt_ms2tick
+    rt_cmsis.o(i.svcSemaphoreWait) refers to rt_semaphore.o(i.rt_sem_wait) for rt_sem_wait
+    rt_cmsis.o(i.svcSignalClear) refers to rt_cmsis.o(i.rt_tid2ptcb) for rt_tid2ptcb
+    rt_cmsis.o(i.svcSignalClear) refers to rt_event.o(i.rt_evt_clr) for rt_evt_clr
+    rt_cmsis.o(i.svcSignalSet) refers to rt_cmsis.o(i.rt_tid2ptcb) for rt_tid2ptcb
+    rt_cmsis.o(i.svcSignalSet) refers to rt_event.o(i.rt_evt_set) for rt_evt_set
+    rt_cmsis.o(i.svcSignalWait) refers to rt_cmsis.o(i.rt_ms2tick) for rt_ms2tick
+    rt_cmsis.o(i.svcSignalWait) refers to rt_event.o(i.rt_evt_wait) for rt_evt_wait
+    rt_cmsis.o(i.svcSignalWait) refers to rt_task.o(.data) for os_tsk
+    rt_cmsis.o(i.svcThreadCreate) refers to rt_memory.o(i.rt_alloc_mem) for rt_alloc_mem
+    rt_cmsis.o(i.svcThreadCreate) refers to rt_task.o(i.rt_tsk_create) for rt_tsk_create
+    rt_cmsis.o(i.svcThreadCreate) refers to rt_memory.o(i.rt_free_mem) for rt_free_mem
+    rt_cmsis.o(i.svcThreadCreate) refers to rtx_conf_cm.o(.bss) for os_stack_mem
+    rt_cmsis.o(i.svcThreadCreate) refers to rt_cmsis.o(i.osThreadExit) for osThreadExit
+    rt_cmsis.o(i.svcThreadGetId) refers to rt_task.o(i.rt_tsk_self) for rt_tsk_self
+    rt_cmsis.o(i.svcThreadGetId) refers to rtx_conf_cm.o(.bss) for os_active_TCB
+    rt_cmsis.o(i.svcThreadGetPriority) refers to rt_cmsis.o(i.rt_tid2ptcb) for rt_tid2ptcb
+    rt_cmsis.o(i.svcThreadSetPriority) refers to rt_cmsis.o(i.rt_tid2ptcb) for rt_tid2ptcb
+    rt_cmsis.o(i.svcThreadSetPriority) refers to rt_task.o(i.rt_tsk_prio) for rt_tsk_prio
+    rt_cmsis.o(i.svcThreadTerminate) refers to rt_cmsis.o(i.rt_tid2ptcb) for rt_tid2ptcb
+    rt_cmsis.o(i.svcThreadTerminate) refers to rt_task.o(i.rt_tsk_delete) for rt_tsk_delete
+    rt_cmsis.o(i.svcThreadTerminate) refers to rt_memory.o(i.rt_free_mem) for rt_free_mem
+    rt_cmsis.o(i.svcThreadTerminate) refers to rtx_conf_cm.o(.bss) for os_stack_mem
+    rt_cmsis.o(i.svcThreadYield) refers to rt_task.o(i.rt_tsk_pass) for rt_tsk_pass
+    rt_cmsis.o(i.svcTimerCall) refers to rt_cmsis.o(i.rt_id2obj) for rt_id2obj
+    rt_cmsis.o(i.svcTimerCreate) refers to rtx_conf_cm.o(.data) for osThreadId_osTimerThread
+    rt_cmsis.o(i.svcTimerDelete) refers to rt_cmsis.o(i.rt_id2obj) for rt_id2obj
+    rt_cmsis.o(i.svcTimerDelete) refers to rt_cmsis.o(i.rt_timer_remove) for rt_timer_remove
+    rt_cmsis.o(i.svcTimerStart) refers to rt_cmsis.o(i.rt_id2obj) for rt_id2obj
+    rt_cmsis.o(i.svcTimerStart) refers to lludivv7m.o(.text) for __aeabi_uldivmod
+    rt_cmsis.o(i.svcTimerStart) refers to rt_cmsis.o(i.rt_timer_remove) for rt_timer_remove
+    rt_cmsis.o(i.svcTimerStart) refers to rt_cmsis.o(i.rt_timer_insert) for rt_timer_insert
+    rt_cmsis.o(i.svcTimerStart) refers to rtx_conf_cm.o(.constdata) for os_clockrate
+    rt_cmsis.o(i.svcTimerStop) refers to rt_cmsis.o(i.rt_id2obj) for rt_id2obj
+    rt_cmsis.o(i.svcTimerStop) refers to rt_cmsis.o(i.rt_timer_remove) for rt_timer_remove
+    rt_cmsis.o(i.sysMailAlloc) refers to rt_membox.o(i.rt_alloc_box) for rt_alloc_box
+    rt_cmsis.o(i.sysMailAlloc) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_cmsis.o(i.sysMailAlloc) refers to rt_cmsis.o(i.rt_ms2tick) for rt_ms2tick
+    rt_cmsis.o(i.sysMailAlloc) refers to rt_task.o(i.rt_block) for rt_block
+    rt_cmsis.o(i.sysMailAlloc) refers to rt_task.o(.data) for os_tsk
+    rt_cmsis.o(i.sysMailFree) refers to rt_membox.o(i.rt_free_box) for rt_free_box
+    rt_cmsis.o(i.sysMailFree) refers to rt_list.o(i.rt_psq_enq) for rt_psq_enq
+    rt_cmsis.o(i.sysMailFree) refers to rt_system.o(i.rt_psh_req) for rt_psh_req
+    rt_cmsis.o(i.sysMailFree) refers to rt_membox.o(i.rt_alloc_box) for rt_alloc_box
+    rt_cmsis.o(i.sysMailFree) refers to rt_list.o(i.rt_get_first) for rt_get_first
+    rt_cmsis.o(i.sysMailFree) refers to hal_cm.o(i.rt_ret_val) for rt_ret_val
+    rt_cmsis.o(i.sysMailFree) refers to rt_list.o(i.rt_rmv_dly) for rt_rmv_dly
+    rt_cmsis.o(i.sysMailFree) refers to rt_task.o(i.rt_dispatch) for rt_dispatch
+    rt_cmsis.o(i.sysPoolAlloc) refers to rt_membox.o(i.rt_alloc_box) for rt_alloc_box
+    rt_cmsis.o(i.sysPoolFree) refers to rt_membox.o(i.rt_free_box) for rt_free_box
+    rt_cmsis.o(i.sysTimerTick) refers to rt_cmsis.o(i.isrMessagePut) for isrMessagePut
+    rt_cmsis.o(i.sysTimerTick) refers to rtx_conf_cm.o(i.os_error) for os_error
+    rt_cmsis.o(i.sysTimerTick) refers to rt_cmsis.o(i.rt_timer_insert) for rt_timer_insert
+    rt_cmsis.o(i.sysTimerTick) refers to rt_cmsis.o(.data) for .data
+    rt_cmsis.o(i.sysTimerTick) refers to rtx_conf_cm.o(.data) for osMessageQId_osTimerMessageQ
+    rt_cmsis.o(i.sysUserTimerUpdate) refers to rt_cmsis.o(i.sysTimerTick) for sysTimerTick
+    rt_cmsis.o(i.sysUserTimerUpdate) refers to rt_cmsis.o(.data) for .data
+    rt_cmsis.o(i.sysUserTimerWakeupTime) refers to rt_cmsis.o(.data) for .data
+    rt_task.o(i.rt_block) refers to rt_list.o(i.rt_put_dly) for rt_put_dly
+    rt_task.o(i.rt_block) refers to rt_list.o(i.rt_get_first) for rt_get_first
+    rt_task.o(i.rt_block) refers to rt_task.o(i.rt_switch_req) for rt_switch_req
+    rt_task.o(i.rt_block) refers to rt_task.o(.data) for .data
+    rt_task.o(i.rt_block) refers to rt_list.o(.bss) for os_rdy
+    rt_task.o(i.rt_dispatch) refers to rt_list.o(i.rt_put_rdy_first) for rt_put_rdy_first
+    rt_task.o(i.rt_dispatch) refers to rt_task.o(i.rt_switch_req) for rt_switch_req
+    rt_task.o(i.rt_dispatch) refers to rt_list.o(i.rt_get_first) for rt_get_first
+    rt_task.o(i.rt_dispatch) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_task.o(i.rt_dispatch) refers to rt_task.o(.data) for .data
+    rt_task.o(i.rt_dispatch) refers to rt_list.o(.bss) for os_rdy
+    rt_task.o(i.rt_init_context) refers to rt_membox.o(i.rt_alloc_box) for rt_alloc_box
+    rt_task.o(i.rt_init_context) refers to hal_cm.o(i.rt_init_stack) for rt_init_stack
+    rt_task.o(i.rt_init_context) refers to rtx_conf_cm.o(.bss) for mp_stk
+    rt_task.o(i.rt_switch_req) refers to hal_cm.o(i.dbg_task_switch) for dbg_task_switch
+    rt_task.o(i.rt_switch_req) refers to rt_task.o(.data) for .data
+    rt_task.o(i.rt_switch_req) refers to hal_cm.o(.data) for dbg_msg
+    rt_task.o(i.rt_sys_init) refers to hal_cm.o(i.dbg_init) for dbg_init
+    rt_task.o(i.rt_sys_init) refers to rt_membox.o(i._init_box) for _init_box
+    rt_task.o(i.rt_sys_init) refers to rt_task.o(i.rt_init_context) for rt_init_context
+    rt_task.o(i.rt_sys_init) refers to rt_robin.o(i.rt_init_robin) for rt_init_robin
+    rt_task.o(i.rt_sys_init) refers to rtx_conf_cm.o(.bss) for os_active_TCB
+    rt_task.o(i.rt_sys_init) refers to rtx_conf_cm.o(.constdata) for os_maxtaskrun
+    rt_task.o(i.rt_sys_init) refers to rtx_conf_cm.o(.data) for m_tmr
+    rt_task.o(i.rt_sys_init) refers to rt_task.o(.bss) for .bss
+    rt_task.o(i.rt_sys_init) refers to rtx_conf_cm.o(i.os_idle_demon) for os_idle_demon
+    rt_task.o(i.rt_sys_init) refers to rt_list.o(.bss) for os_rdy
+    rt_task.o(i.rt_sys_init) refers to rt_task.o(.data) for .data
+    rt_task.o(i.rt_sys_start) refers to rt_system.o(i.os_tick_init) for os_tick_init
+    rt_task.o(i.rt_sys_start) refers to rt_system.o(.data) for os_tick_irqn
+    rt_task.o(i.rt_tsk_create) refers to rt_membox.o(i.rt_alloc_box) for rt_alloc_box
+    rt_task.o(i.rt_tsk_create) refers to rt_task.o(i.rt_init_context) for rt_init_context
+    rt_task.o(i.rt_tsk_create) refers to hal_cm.o(i.dbg_task_notify) for dbg_task_notify
+    rt_task.o(i.rt_tsk_create) refers to rt_task.o(i.rt_dispatch) for rt_dispatch
+    rt_task.o(i.rt_tsk_create) refers to rtx_conf_cm.o(.bss) for mp_tcb
+    rt_task.o(i.rt_tsk_create) refers to rtx_conf_cm.o(.constdata) for os_maxtaskrun
+    rt_task.o(i.rt_tsk_create) refers to hal_cm.o(.data) for dbg_msg
+    rt_task.o(i.rt_tsk_delete) refers to hal_cm4.o(.emb_text) for rt_get_PSP
+    rt_task.o(i.rt_tsk_delete) refers to rt_system.o(i.rt_stk_check) for rt_stk_check
+    rt_task.o(i.rt_tsk_delete) refers to rt_list.o(i.rt_get_first) for rt_get_first
+    rt_task.o(i.rt_tsk_delete) refers to hal_cm.o(i.rt_ret_val) for rt_ret_val
+    rt_task.o(i.rt_tsk_delete) refers to rt_list.o(i.rt_rmv_dly) for rt_rmv_dly
+    rt_task.o(i.rt_tsk_delete) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_task.o(i.rt_tsk_delete) refers to rt_membox.o(i.rt_free_box) for rt_free_box
+    rt_task.o(i.rt_tsk_delete) refers to hal_cm.o(i.dbg_task_notify) for dbg_task_notify
+    rt_task.o(i.rt_tsk_delete) refers to rt_list.o(i.rt_rmv_list) for rt_rmv_list
+    rt_task.o(i.rt_tsk_delete) refers to rt_task.o(i.rt_dispatch) for rt_dispatch
+    rt_task.o(i.rt_tsk_delete) refers to hal_cm.o(.data) for dbg_msg
+    rt_task.o(i.rt_tsk_delete) refers to rtx_conf_cm.o(.bss) for os_active_TCB
+    rt_task.o(i.rt_tsk_delete) refers to rt_task.o(.data) for .data
+    rt_task.o(i.rt_tsk_delete) refers to rt_list.o(.bss) for os_rdy
+    rt_task.o(i.rt_tsk_delete) refers to rtx_conf_cm.o(.constdata) for os_maxtaskrun
+    rt_task.o(i.rt_tsk_pass) refers to rt_list.o(i.rt_get_same_rdy_prio) for rt_get_same_rdy_prio
+    rt_task.o(i.rt_tsk_pass) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_task.o(i.rt_tsk_pass) refers to rt_task.o(i.rt_switch_req) for rt_switch_req
+    rt_task.o(i.rt_tsk_pass) refers to rt_task.o(.data) for .data
+    rt_task.o(i.rt_tsk_pass) refers to rt_list.o(.bss) for os_rdy
+    rt_task.o(i.rt_tsk_prio) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_task.o(i.rt_tsk_prio) refers to rt_list.o(i.rt_resort_prio) for rt_resort_prio
+    rt_task.o(i.rt_tsk_prio) refers to rt_list.o(i.rt_get_first) for rt_get_first
+    rt_task.o(i.rt_tsk_prio) refers to rt_task.o(i.rt_dispatch) for rt_dispatch
+    rt_task.o(i.rt_tsk_prio) refers to rt_task.o(.data) for .data
+    rt_task.o(i.rt_tsk_prio) refers to rtx_conf_cm.o(.constdata) for os_maxtaskrun
+    rt_task.o(i.rt_tsk_prio) refers to rtx_conf_cm.o(.bss) for os_active_TCB
+    rt_task.o(i.rt_tsk_prio) refers to rt_list.o(.bss) for os_rdy
+    rt_task.o(i.rt_tsk_self) refers to rt_task.o(.data) for .data
+    rt_mutex.o(i.rt_mut_delete) refers to rt_list.o(i.rt_resort_prio) for rt_resort_prio
+    rt_mutex.o(i.rt_mut_delete) refers to rt_list.o(i.rt_get_first) for rt_get_first
+    rt_mutex.o(i.rt_mut_delete) refers to hal_cm.o(i.rt_ret_val) for rt_ret_val
+    rt_mutex.o(i.rt_mut_delete) refers to rt_list.o(i.rt_rmv_dly) for rt_rmv_dly
+    rt_mutex.o(i.rt_mut_delete) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_mutex.o(i.rt_mut_delete) refers to rt_task.o(i.rt_dispatch) for rt_dispatch
+    rt_mutex.o(i.rt_mut_delete) refers to rt_task.o(.data) for os_tsk
+    rt_mutex.o(i.rt_mut_delete) refers to rt_list.o(.bss) for os_rdy
+    rt_mutex.o(i.rt_mut_release) refers to rt_list.o(i.rt_get_first) for rt_get_first
+    rt_mutex.o(i.rt_mut_release) refers to hal_cm.o(i.rt_ret_val) for rt_ret_val
+    rt_mutex.o(i.rt_mut_release) refers to rt_list.o(i.rt_rmv_dly) for rt_rmv_dly
+    rt_mutex.o(i.rt_mut_release) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_mutex.o(i.rt_mut_release) refers to rt_task.o(i.rt_dispatch) for rt_dispatch
+    rt_mutex.o(i.rt_mut_release) refers to rt_task.o(.data) for os_tsk
+    rt_mutex.o(i.rt_mut_release) refers to rt_list.o(.bss) for os_rdy
+    rt_mutex.o(i.rt_mut_wait) refers to rt_list.o(i.rt_resort_prio) for rt_resort_prio
+    rt_mutex.o(i.rt_mut_wait) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_mutex.o(i.rt_mut_wait) refers to rt_task.o(i.rt_block) for rt_block
+    rt_mutex.o(i.rt_mut_wait) refers to rt_task.o(.data) for os_tsk
+    rt_system.o(i.os_tick_init) refers to rtx_conf_cm.o(.constdata) for os_trv
+    rt_system.o(i.os_tick_val) refers to rtx_conf_cm.o(.constdata) for os_trv
+    rt_system.o(i.rt_pop_req) refers to rt_list.o(i.rt_put_rdy_first) for rt_put_rdy_first
+    rt_system.o(i.rt_pop_req) refers to rt_semaphore.o(i.rt_sem_psh) for rt_sem_psh
+    rt_system.o(i.rt_pop_req) refers to rt_list.o(i.rt_get_first) for rt_get_first
+    rt_system.o(i.rt_pop_req) refers to rt_task.o(i.rt_switch_req) for rt_switch_req
+    rt_system.o(i.rt_pop_req) refers to rt_event.o(i.rt_evt_psh) for rt_evt_psh
+    rt_system.o(i.rt_pop_req) refers to rt_mailbox.o(i.rt_mbx_psh) for rt_mbx_psh
+    rt_system.o(i.rt_pop_req) refers to rt_task.o(.data) for os_tsk
+    rt_system.o(i.rt_pop_req) refers to rtx_conf_cm.o(.bss) for os_fifo
+    rt_system.o(i.rt_pop_req) refers to rt_list.o(.bss) for os_rdy
+    rt_system.o(i.rt_psh_req) refers to rt_system.o(.data) for .data
+    rt_system.o(i.rt_resume) refers to rt_list.o(i.rt_put_rdy_first) for rt_put_rdy_first
+    rt_system.o(i.rt_resume) refers to rt_list.o(i.rt_dec_dly) for rt_dec_dly
+    rt_system.o(i.rt_resume) refers to rt_cmsis.o(i.sysUserTimerUpdate) for sysUserTimerUpdate
+    rt_system.o(i.rt_resume) refers to rt_list.o(i.rt_get_first) for rt_get_first
+    rt_system.o(i.rt_resume) refers to rt_task.o(i.rt_switch_req) for rt_switch_req
+    rt_system.o(i.rt_resume) refers to rt_system.o(i.rt_tsk_unlock) for rt_tsk_unlock
+    rt_system.o(i.rt_resume) refers to rt_task.o(.data) for os_tsk
+    rt_system.o(i.rt_resume) refers to rt_robin.o(.data) for os_robin
+    rt_system.o(i.rt_resume) refers to rt_list.o(.bss) for os_dly
+    rt_system.o(i.rt_resume) refers to rt_time.o(.data) for os_time
+    rt_system.o(i.rt_stk_check) refers to rtx_conf_cm.o(i.os_error) for os_error
+    rt_system.o(i.rt_stk_check) refers to rt_task.o(.data) for os_tsk
+    rt_system.o(i.rt_suspend) refers to rt_system.o(i.rt_tsk_lock) for rt_tsk_lock
+    rt_system.o(i.rt_suspend) refers to rt_cmsis.o(i.sysUserTimerWakeupTime) for sysUserTimerWakeupTime
+    rt_system.o(i.rt_suspend) refers to rt_list.o(.bss) for os_dly
+    rt_system.o(i.rt_systick) refers to rt_list.o(i.rt_put_rdy_first) for rt_put_rdy_first
+    rt_system.o(i.rt_systick) refers to rt_robin.o(i.rt_chk_robin) for rt_chk_robin
+    rt_system.o(i.rt_systick) refers to rt_list.o(i.rt_dec_dly) for rt_dec_dly
+    rt_system.o(i.rt_systick) refers to rt_cmsis.o(i.sysTimerTick) for sysTimerTick
+    rt_system.o(i.rt_systick) refers to rt_list.o(i.rt_get_first) for rt_get_first
+    rt_system.o(i.rt_systick) refers to rt_task.o(i.rt_switch_req) for rt_switch_req
+    rt_system.o(i.rt_systick) refers to rt_task.o(.data) for os_tsk
+    rt_system.o(i.rt_systick) refers to rt_time.o(.data) for os_time
+    rt_system.o(i.rt_systick) refers to rt_list.o(.bss) for os_rdy
+    rt_system.o(i.rt_tsk_lock) refers to rt_system.o(.data) for .data
+    rt_system.o(i.rt_tsk_unlock) refers to rt_system.o(.data) for .data
+    rt_event.o(i.isr_evt_set) refers to rt_list.o(i.rt_psq_enq) for rt_psq_enq
+    rt_event.o(i.isr_evt_set) refers to rt_system.o(i.rt_psh_req) for rt_psh_req
+    rt_event.o(i.isr_evt_set) refers to rtx_conf_cm.o(.bss) for os_active_TCB
+    rt_event.o(i.rt_evt_clr) refers to rtx_conf_cm.o(.bss) for os_active_TCB
+    rt_event.o(i.rt_evt_get) refers to rt_task.o(.data) for os_tsk
+    rt_event.o(i.rt_evt_psh) refers to rt_list.o(i.rt_rmv_dly) for rt_rmv_dly
+    rt_event.o(i.rt_evt_psh) refers to hal_cm.o(i.rt_ret_val2) for rt_ret_val2
+    rt_event.o(i.rt_evt_psh) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_event.o(i.rt_evt_psh) refers to rt_list.o(.bss) for os_rdy
+    rt_event.o(i.rt_evt_set) refers to rt_list.o(i.rt_rmv_dly) for rt_rmv_dly
+    rt_event.o(i.rt_evt_set) refers to hal_cm.o(i.rt_ret_val2) for rt_ret_val2
+    rt_event.o(i.rt_evt_set) refers to rt_task.o(i.rt_dispatch) for rt_dispatch
+    rt_event.o(i.rt_evt_set) refers to rtx_conf_cm.o(.bss) for os_active_TCB
+    rt_event.o(i.rt_evt_wait) refers to rt_task.o(i.rt_block) for rt_block
+    rt_event.o(i.rt_evt_wait) refers to rt_task.o(.data) for os_tsk
+    rt_list.o(i.rt_dec_dly) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_list.o(i.rt_dec_dly) refers to rt_list.o(.bss) for .bss
+    rt_list.o(i.rt_dec_dly) refers to rt_time.o(.data) for os_time
+    rt_list.o(i.rt_get_same_rdy_prio) refers to rt_list.o(.bss) for .bss
+    rt_list.o(i.rt_get_same_rdy_prio) refers to rt_task.o(.data) for os_tsk
+    rt_list.o(i.rt_psq_enq) refers to rtx_conf_cm.o(i.os_error) for os_error
+    rt_list.o(i.rt_psq_enq) refers to rtx_conf_cm.o(.bss) for os_fifo
+    rt_list.o(i.rt_put_dly) refers to rt_list.o(.bss) for .bss
+    rt_list.o(i.rt_put_rdy_first) refers to rt_list.o(.bss) for .bss
+    rt_list.o(i.rt_resort_prio) refers to rt_list.o(i.rt_rmv_list) for rt_rmv_list
+    rt_list.o(i.rt_resort_prio) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_list.o(i.rt_resort_prio) refers to rt_list.o(.bss) for .bss
+    rt_list.o(i.rt_rmv_list) refers to rt_list.o(.bss) for .bss
+    rt_mailbox.o(i.isr_mbx_receive) refers to rt_list.o(i.rt_psq_enq) for rt_psq_enq
+    rt_mailbox.o(i.isr_mbx_receive) refers to rt_system.o(i.rt_psh_req) for rt_psh_req
+    rt_mailbox.o(i.isr_mbx_send) refers to rt_list.o(i.rt_psq_enq) for rt_psq_enq
+    rt_mailbox.o(i.isr_mbx_send) refers to rt_system.o(i.rt_psh_req) for rt_psh_req
+    rt_mailbox.o(i.rt_mbx_psh) refers to rt_membox.o(i.rt_alloc_box) for rt_alloc_box
+    rt_mailbox.o(i.rt_mbx_psh) refers to rt_list.o(i.rt_get_first) for rt_get_first
+    rt_mailbox.o(i.rt_mbx_psh) refers to hal_cm.o(i.rt_ret_val) for rt_ret_val
+    rt_mailbox.o(i.rt_mbx_psh) refers to rt_list.o(i.rt_rmv_dly) for rt_rmv_dly
+    rt_mailbox.o(i.rt_mbx_psh) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_mailbox.o(i.rt_mbx_psh) refers to hal_cm.o(i.rt_ret_val2) for rt_ret_val2
+    rt_mailbox.o(i.rt_mbx_psh) refers to rtx_conf_cm.o(i.os_error) for os_error
+    rt_mailbox.o(i.rt_mbx_psh) refers to rt_list.o(.bss) for os_rdy
+    rt_mailbox.o(i.rt_mbx_send) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_mailbox.o(i.rt_mbx_send) refers to rt_list.o(i.rt_get_first) for rt_get_first
+    rt_mailbox.o(i.rt_mbx_send) refers to hal_cm.o(i.rt_ret_val2) for rt_ret_val2
+    rt_mailbox.o(i.rt_mbx_send) refers to rt_list.o(i.rt_rmv_dly) for rt_rmv_dly
+    rt_mailbox.o(i.rt_mbx_send) refers to rt_task.o(i.rt_dispatch) for rt_dispatch
+    rt_mailbox.o(i.rt_mbx_send) refers to rt_task.o(i.rt_block) for rt_block
+    rt_mailbox.o(i.rt_mbx_send) refers to rt_task.o(.data) for os_tsk
+    rt_mailbox.o(i.rt_mbx_wait) refers to rt_list.o(i.rt_get_first) for rt_get_first
+    rt_mailbox.o(i.rt_mbx_wait) refers to hal_cm.o(i.rt_ret_val) for rt_ret_val
+    rt_mailbox.o(i.rt_mbx_wait) refers to rt_list.o(i.rt_rmv_dly) for rt_rmv_dly
+    rt_mailbox.o(i.rt_mbx_wait) refers to rt_task.o(i.rt_dispatch) for rt_dispatch
+    rt_mailbox.o(i.rt_mbx_wait) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_mailbox.o(i.rt_mbx_wait) refers to rt_task.o(i.rt_block) for rt_block
+    rt_mailbox.o(i.rt_mbx_wait) refers to rt_task.o(.data) for os_tsk
+    rt_semaphore.o(i.isr_sem_send) refers to rt_list.o(i.rt_psq_enq) for rt_psq_enq
+    rt_semaphore.o(i.isr_sem_send) refers to rt_system.o(i.rt_psh_req) for rt_psh_req
+    rt_semaphore.o(i.rt_sem_delete) refers to rt_list.o(i.rt_get_first) for rt_get_first
+    rt_semaphore.o(i.rt_sem_delete) refers to hal_cm.o(i.rt_ret_val) for rt_ret_val
+    rt_semaphore.o(i.rt_sem_delete) refers to rt_list.o(i.rt_rmv_dly) for rt_rmv_dly
+    rt_semaphore.o(i.rt_sem_delete) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_semaphore.o(i.rt_sem_delete) refers to rt_task.o(i.rt_dispatch) for rt_dispatch
+    rt_semaphore.o(i.rt_sem_delete) refers to rt_list.o(.bss) for os_rdy
+    rt_semaphore.o(i.rt_sem_delete) refers to rt_task.o(.data) for os_tsk
+    rt_semaphore.o(i.rt_sem_psh) refers to rt_list.o(i.rt_get_first) for rt_get_first
+    rt_semaphore.o(i.rt_sem_psh) refers to rt_list.o(i.rt_rmv_dly) for rt_rmv_dly
+    rt_semaphore.o(i.rt_sem_psh) refers to hal_cm.o(i.rt_ret_val) for rt_ret_val
+    rt_semaphore.o(i.rt_sem_psh) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_semaphore.o(i.rt_sem_psh) refers to rt_list.o(.bss) for os_rdy
+    rt_semaphore.o(i.rt_sem_send) refers to rt_list.o(i.rt_get_first) for rt_get_first
+    rt_semaphore.o(i.rt_sem_send) refers to hal_cm.o(i.rt_ret_val) for rt_ret_val
+    rt_semaphore.o(i.rt_sem_send) refers to rt_list.o(i.rt_rmv_dly) for rt_rmv_dly
+    rt_semaphore.o(i.rt_sem_send) refers to rt_task.o(i.rt_dispatch) for rt_dispatch
+    rt_semaphore.o(i.rt_sem_wait) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_semaphore.o(i.rt_sem_wait) refers to rt_task.o(i.rt_block) for rt_block
+    rt_semaphore.o(i.rt_sem_wait) refers to rt_task.o(.data) for os_tsk
+    rt_time.o(i.rt_dly_wait) refers to rt_task.o(i.rt_block) for rt_block
+    rt_time.o(i.rt_itv_set) refers to rt_task.o(.data) for os_tsk
+    rt_time.o(i.rt_itv_set) refers to rt_time.o(.data) for .data
+    rt_time.o(i.rt_itv_wait) refers to rt_task.o(i.rt_block) for rt_block
+    rt_time.o(i.rt_itv_wait) refers to rt_task.o(.data) for os_tsk
+    rt_time.o(i.rt_itv_wait) refers to rt_time.o(.data) for .data
+    rt_time.o(i.rt_time_get) refers to rt_time.o(.data) for .data
+    rt_robin.o(i.rt_chk_robin) refers to rt_list.o(i.rt_get_first) for rt_get_first
+    rt_robin.o(i.rt_chk_robin) refers to rt_list.o(i.rt_put_prio) for rt_put_prio
+    rt_robin.o(i.rt_chk_robin) refers to rt_robin.o(.data) for .data
+    rt_robin.o(i.rt_chk_robin) refers to rt_list.o(.bss) for os_rdy
+    rt_robin.o(i.rt_chk_robin) refers to rt_time.o(.data) for os_time
+    rt_robin.o(i.rt_init_robin) refers to rt_robin.o(.data) for .data
+    rt_robin.o(i.rt_init_robin) refers to rtx_conf_cm.o(.constdata) for os_rrobin
+    rt_membox.o(i._calloc_box) refers to hal_cm4.o(.emb_text) for _alloc_box
+    hal_cm.o(i.dbg_init) refers to hal_cm.o(.data) for .data
+    hal_cm.o(i.rt_init_stack) refers to rtx_conf_cm.o(.constdata) for os_stackinfo
+    hal_cm.o(i.rt_ret_val) refers to hal_cm.o(i.rt_ret_regs) for rt_ret_regs
+    hal_cm.o(i.rt_ret_val2) refers to hal_cm.o(i.rt_ret_regs) for rt_ret_regs
+    hal_cm4.o(.emb_text) refers to rtx_conf_cm.o(.constdata) for os_flags
+    hal_cm4.o(.emb_text) refers to rt_membox.o(i.rt_alloc_box) for rt_alloc_box
+    hal_cm4.o(.emb_text) refers to rt_membox.o(i.rt_free_box) for rt_free_box
+    hal_cm4.o(.emb_text) refers to rt_system.o(i.rt_stk_check) for rt_stk_check
+    hal_cm4.o(.emb_text) refers to rt_task.o(.data) for os_tsk
+    hal_cm4.o(.emb_text) refers to svc_table.o(SVC_TABLE) for SVC_Count
+    hal_cm4.o(.emb_text) refers to rt_system.o(i.rt_pop_req) for rt_pop_req
+    hal_cm4.o(.emb_text) refers to rt_system.o(i.rt_systick) for rt_systick
+    hal_cm4.o(.emb_text) refers to rt_system.o(i.os_tick_irqack) for os_tick_irqack
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    rt_memcpy_v6.o(.text) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for __rt_entry_postli_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for __rt_entry_sh
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    aeabi_ldiv0_sigfpe.o(.text) refers to rt_div0.o(.text) for __rt_div0
+    __rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to rtx_conf_cm.o(.emb_text) for _platform_post_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to main.o(i.main) for main
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    __rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    __rtentry4.o(.ARM.exidx) refers to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to sys_exit.o(.text) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    rt_div0.o(.text) refers to defsig_fpe_outer.o(.text) for __rt_SIGFPE
+    sys_exit.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to arm_startup_nrf52.o(.text) for __user_initial_stackheap
+    defsig_fpe_outer.o(.text) refers to defsig_fpe_inner.o(.text) for __rt_SIGFPE_inner
+    defsig_fpe_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_fpe_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002C) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000032) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000001) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000A) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000011) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000004) for __rt_lib_init_preinit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000E) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000033) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000025) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_user_alloc_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000002) for __rt_lib_shutdown_cpp_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000007) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000010) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000004) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C) for __rt_lib_shutdown_user_alloc_1
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_exit.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    libinit2.o(.ARM.Collect$$libinit$$00000001) refers to fpinit.o(x$fpl$fpinit) for _fp_init
+    libinit2.o(.ARM.Collect$$libinit$$00000010) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000018) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000026) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000027) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to sys_wrch.o(.text) for _ttywrch
+    argv_veneer.o(.emb_text) refers to no_argv.o(.text) for __ARM_get_argv
+    sys_wrch.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig.o(CL$$defsig) refers to defsig_fpe_inner.o(.text) for __rt_SIGFPE_inner
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing main.o(.rrx_text), (6 bytes).
+    Removing spi.o(.rev16_text), (4 bytes).
+    Removing spi.o(.revsh_text), (4 bytes).
+    Removing spi.o(.rrx_text), (6 bytes).
+    Removing boards.o(.rev16_text), (4 bytes).
+    Removing boards.o(.revsh_text), (4 bytes).
+    Removing boards.o(.rrx_text), (6 bytes).
+    Removing boards.o(i.bsp_board_button_idx_to_pin), (12 bytes).
+    Removing boards.o(i.bsp_board_button_state_get), (48 bytes).
+    Removing boards.o(i.bsp_board_buttons_init), (44 bytes).
+    Removing boards.o(i.bsp_board_init), (26 bytes).
+    Removing boards.o(i.bsp_board_led_idx_to_pin), (12 bytes).
+    Removing boards.o(i.bsp_board_led_invert), (48 bytes).
+    Removing boards.o(i.bsp_board_led_off), (20 bytes).
+    Removing boards.o(i.bsp_board_led_on), (20 bytes).
+    Removing boards.o(i.bsp_board_led_state_get), (48 bytes).
+    Removing boards.o(i.bsp_board_leds_init), (48 bytes).
+    Removing boards.o(i.bsp_board_leds_off), (20 bytes).
+    Removing boards.o(i.bsp_board_leds_on), (20 bytes).
+    Removing boards.o(i.bsp_board_pin_to_button_idx), (36 bytes).
+    Removing boards.o(i.bsp_board_pin_to_led_idx), (36 bytes).
+    Removing boards.o(i.nrf_gpio_cfg), (40 bytes).
+    Removing boards.o(i.nrf_gpio_pin_write), (58 bytes).
+    Removing boards.o(.constdata), (8 bytes).
+    Removing nrf_pwr_mgmt.o(.rev16_text), (4 bytes).
+    Removing nrf_pwr_mgmt.o(.revsh_text), (4 bytes).
+    Removing nrf_pwr_mgmt.o(.rrx_text), (6 bytes).
+    Removing nrf_pwr_mgmt.o(i.nrf_mtx_unlock), (22 bytes).
+    Removing nrf_pwr_mgmt.o(i.nrf_pwr_mgmt_feed), (2 bytes).
+    Removing nrf_pwr_mgmt.o(i.nrf_pwr_mgmt_init), (64 bytes).
+    Removing nrf_pwr_mgmt.o(i.nrf_pwr_mgmt_run), (8 bytes).
+    Removing nrf_pwr_mgmt.o(i.nrf_pwr_mgmt_shutdown), (100 bytes).
+    Removing nrf_pwr_mgmt.o(i.shutdown_process), (168 bytes).
+    Removing nrf_pwr_mgmt.o(.bss), (12 bytes).
+    Removing nrf_pwr_mgmt.o(.constdata), (36 bytes).
+    Removing nrf_pwr_mgmt.o(.data), (9 bytes).
+    Removing nrf_section_iter.o(.rev16_text), (4 bytes).
+    Removing nrf_section_iter.o(.revsh_text), (4 bytes).
+    Removing nrf_section_iter.o(.rrx_text), (6 bytes).
+    Removing nrf_section_iter.o(i.nrf_section_iter_init), (20 bytes).
+    Removing nrf_section_iter.o(i.nrf_section_iter_item_set), (46 bytes).
+    Removing nrf_section_iter.o(i.nrf_section_iter_next), (46 bytes).
+    Removing app_util_platform.o(.rev16_text), (4 bytes).
+    Removing app_util_platform.o(.revsh_text), (4 bytes).
+    Removing app_util_platform.o(.rrx_text), (6 bytes).
+    Removing app_util_platform.o(i.app_util_critical_region_enter), (10 bytes).
+    Removing app_util_platform.o(i.app_util_critical_region_exit), (10 bytes).
+    Removing app_util_platform.o(i.app_util_disable_irq), (20 bytes).
+    Removing app_util_platform.o(i.app_util_enable_irq), (24 bytes).
+    Removing app_util_platform.o(i.current_int_priority_get), (60 bytes).
+    Removing app_util_platform.o(i.privilege_level_get), (34 bytes).
+    Removing app_util_platform.o(.data), (4 bytes).
+    Removing nrfx_uart.o(.rev16_text), (4 bytes).
+    Removing nrfx_uart.o(.revsh_text), (4 bytes).
+    Removing nrfx_uart.o(.rrx_text), (6 bytes).
+    Removing nrfx_uart.o(i.apply_config), (124 bytes).
+    Removing nrfx_uart.o(i.interrupts_disable), (88 bytes).
+    Removing nrfx_uart.o(i.interrupts_enable), (140 bytes).
+    Removing nrfx_uart.o(i.nrf_gpio_cfg), (40 bytes).
+    Removing nrfx_uart.o(i.nrf_gpio_cfg_default), (24 bytes).
+    Removing nrfx_uart.o(i.nrf_gpio_cfg_input), (26 bytes).
+    Removing nrfx_uart.o(i.nrf_gpio_cfg_output), (24 bytes).
+    Removing nrfx_uart.o(i.nrf_gpio_pin_set), (22 bytes).
+    Removing nrfx_uart.o(i.nrf_uart_hwfc_pins_set), (10 bytes).
+    Removing nrfx_uart.o(i.nrf_uart_int_enable), (6 bytes).
+    Removing nrfx_uart.o(i.nrf_uart_txrx_pins_set), (10 bytes).
+    Removing nrfx_uart.o(i.nrfx_get_irq_number), (8 bytes).
+    Removing nrfx_uart.o(i.nrfx_uart_errorsrc_get), (22 bytes).
+    Removing nrfx_uart.o(i.nrfx_uart_init), (108 bytes).
+    Removing nrfx_uart.o(i.nrfx_uart_rx), (292 bytes).
+    Removing nrfx_uart.o(i.nrfx_uart_rx_abort), (24 bytes).
+    Removing nrfx_uart.o(i.nrfx_uart_rx_disable), (40 bytes).
+    Removing nrfx_uart.o(i.nrfx_uart_rx_enable), (60 bytes).
+    Removing nrfx_uart.o(i.nrfx_uart_rx_ready), (16 bytes).
+    Removing nrfx_uart.o(i.nrfx_uart_tx), (140 bytes).
+    Removing nrfx_uart.o(i.nrfx_uart_tx_abort), (52 bytes).
+    Removing nrfx_uart.o(i.nrfx_uart_tx_in_progress), (36 bytes).
+    Removing nrfx_uart.o(i.nrfx_uart_uninit), (60 bytes).
+    Removing nrfx_uart.o(i.pins_to_default), (120 bytes).
+    Removing nrfx_uart.o(i.rx_enable), (34 bytes).
+    Removing nrfx_uart.o(i.tx_blocking), (54 bytes).
+    Removing nrfx_uart.o(.constdata), (41 bytes).
+    Removing nrfx_gpiote.o(.rev16_text), (4 bytes).
+    Removing nrfx_gpiote.o(.revsh_text), (4 bytes).
+    Removing nrfx_gpiote.o(.rrx_text), (6 bytes).
+    Removing nrfx_gpiote.o(i.channel_free), (32 bytes).
+    Removing nrfx_gpiote.o(i.channel_port_alloc), (128 bytes).
+    Removing nrfx_gpiote.o(i.nrf_gpio_cfg), (40 bytes).
+    Removing nrfx_gpiote.o(i.nrf_gpio_cfg_default), (24 bytes).
+    Removing nrfx_gpiote.o(i.nrf_gpio_pin_clear), (22 bytes).
+    Removing nrfx_gpiote.o(i.nrf_gpio_pin_read), (24 bytes).
+    Removing nrfx_gpiote.o(i.nrf_gpio_pin_set), (22 bytes).
+    Removing nrfx_gpiote.o(i.nrf_gpiote_int_enable), (12 bytes).
+    Removing nrfx_gpiote.o(i.nrf_gpiote_task_addr_get), (12 bytes).
+    Removing nrfx_gpiote.o(i.nrf_gpiote_te_default), (16 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_clr_task_addr_get), (24 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_clr_task_trigger), (32 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_in_event_addr_get), (38 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_in_event_disable), (84 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_in_event_enable), (172 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_in_init), (244 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_in_is_set), (20 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_in_uninit), (72 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_init), (184 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_is_init), (20 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_out_clear), (12 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_out_init), (208 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_out_set), (12 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_out_task_addr_get), (22 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_out_task_disable), (36 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_out_task_enable), (44 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_out_task_force), (48 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_out_task_trigger), (32 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_out_toggle), (38 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_out_uninit), (66 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_set_task_addr_get), (24 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_set_task_trigger), (32 bytes).
+    Removing nrfx_gpiote.o(i.nrfx_gpiote_uninit), (68 bytes).
+    Removing nrfx_gpiote.o(i.pin_configured_check), (28 bytes).
+    Removing nrfx_gpiote.o(i.pin_configured_clear), (32 bytes).
+    Removing nrfx_gpiote.o(i.pin_configured_set), (20 bytes).
+    Removing nrfx_gpiote.o(i.pin_in_use_by_gpiote), (28 bytes).
+    Removing nrfx_gpiote.o(i.pin_in_use_by_port), (24 bytes).
+    Removing nrfx_gpiote.o(i.pin_in_use_by_te), (32 bytes).
+    Removing nrfx_gpiote.o(i.pin_in_use_clear), (12 bytes).
+    Removing nrf_drv_ppi.o(.rev16_text), (4 bytes).
+    Removing nrf_drv_ppi.o(.revsh_text), (4 bytes).
+    Removing nrf_drv_ppi.o(.rrx_text), (6 bytes).
+    Removing nrf_drv_ppi.o(i.nrf_drv_ppi_init), (28 bytes).
+    Removing nrf_drv_ppi.o(i.nrf_drv_ppi_uninit), (32 bytes).
+    Removing nrf_drv_ppi.o(.data), (1 bytes).
+    Removing nrf_drv_uart.o(.rev16_text), (4 bytes).
+    Removing nrf_drv_uart.o(.revsh_text), (4 bytes).
+    Removing nrf_drv_uart.o(.rrx_text), (6 bytes).
+    Removing nrf_drv_uart.o(i.nrf_drv_uart_init), (84 bytes).
+    Removing nrf_drv_uart.o(i.uart_evt_handler), (56 bytes).
+    Removing nrf_drv_uart.o(.data), (9 bytes).
+    Removing nrfx_atomic.o(.rev16_text), (4 bytes).
+    Removing nrfx_atomic.o(.revsh_text), (4 bytes).
+    Removing nrfx_atomic.o(.rrx_text), (6 bytes).
+    Removing nrfx_atomic.o(.emb_text), (226 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_flag_clear), (14 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_flag_clear_fetch), (14 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_flag_set), (14 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_flag_set_fetch), (14 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_u32_add), (22 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_u32_and), (22 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_u32_cmp_exch), (20 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_u32_fetch_add), (22 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_u32_fetch_and), (22 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_u32_fetch_or), (22 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_u32_fetch_store), (22 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_u32_fetch_sub), (22 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_u32_fetch_sub_hs), (22 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_u32_fetch_xor), (22 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_u32_or), (22 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_u32_store), (22 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_u32_sub), (22 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_u32_sub_hs), (22 bytes).
+    Removing nrfx_atomic.o(i.nrfx_atomic_u32_xor), (22 bytes).
+    Removing nrfx_ppi.o(.rev16_text), (4 bytes).
+    Removing nrfx_ppi.o(.revsh_text), (4 bytes).
+    Removing nrfx_ppi.o(.rrx_text), (6 bytes).
+    Removing nrfx_ppi.o(i.group_to_mask), (8 bytes).
+    Removing nrfx_ppi.o(i.is_allocated_channel), (32 bytes).
+    Removing nrfx_ppi.o(i.is_allocated_group), (32 bytes).
+    Removing nrfx_ppi.o(i.is_app_channel), (16 bytes).
+    Removing nrfx_ppi.o(i.is_app_group), (24 bytes).
+    Removing nrfx_ppi.o(i.is_programmable_app_channel), (24 bytes).
+    Removing nrfx_ppi.o(i.nrf_ppi_channel_disable), (16 bytes).
+    Removing nrfx_ppi.o(i.nrf_ppi_group_disable), (16 bytes).
+    Removing nrfx_ppi.o(i.nrfx_ppi_channel_alloc), (108 bytes).
+    Removing nrfx_ppi.o(i.nrfx_ppi_channel_assign), (72 bytes).
+    Removing nrfx_ppi.o(i.nrfx_ppi_channel_disable), (50 bytes).
+    Removing nrfx_ppi.o(i.nrfx_ppi_channel_enable), (60 bytes).
+    Removing nrfx_ppi.o(i.nrfx_ppi_channel_fork_assign), (40 bytes).
+    Removing nrfx_ppi.o(i.nrfx_ppi_channel_free), (64 bytes).
+    Removing nrfx_ppi.o(i.nrfx_ppi_channel_to_mask), (8 bytes).
+    Removing nrfx_ppi.o(i.nrfx_ppi_channels_include_in_group), (80 bytes).
+    Removing nrfx_ppi.o(i.nrfx_ppi_channels_remove_from_group), (80 bytes).
+    Removing nrfx_ppi.o(i.nrfx_ppi_free_all), (104 bytes).
+    Removing nrfx_ppi.o(i.nrfx_ppi_group_alloc), (104 bytes).
+    Removing nrfx_ppi.o(i.nrfx_ppi_group_disable), (28 bytes).
+    Removing nrfx_ppi.o(i.nrfx_ppi_group_enable), (52 bytes).
+    Removing nrfx_ppi.o(i.nrfx_ppi_group_free), (76 bytes).
+    Removing nrfx_ppi.o(.constdata), (304 bytes).
+    Removing nrfx_ppi.o(.data), (5 bytes).
+    Removing nrfx_prs.o(.rev16_text), (4 bytes).
+    Removing nrfx_prs.o(.revsh_text), (4 bytes).
+    Removing nrfx_prs.o(.rrx_text), (6 bytes).
+    Removing nrfx_saadc.o(.rev16_text), (4 bytes).
+    Removing nrfx_saadc.o(.revsh_text), (4 bytes).
+    Removing nrfx_saadc.o(.rrx_text), (6 bytes).
+    Removing nrfx_timer.o(.rev16_text), (4 bytes).
+    Removing nrfx_timer.o(.revsh_text), (4 bytes).
+    Removing nrfx_timer.o(.rrx_text), (6 bytes).
+    Removing nrfx_uarte.o(.rev16_text), (4 bytes).
+    Removing nrfx_uarte.o(.revsh_text), (4 bytes).
+    Removing nrfx_uarte.o(.rrx_text), (6 bytes).
+    Removing nrf_atomic.o(.rev16_text), (4 bytes).
+    Removing nrf_atomic.o(.revsh_text), (4 bytes).
+    Removing nrf_atomic.o(.rrx_text), (6 bytes).
+    Removing nrf_atomic.o(.emb_text), (226 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_flag_clear), (14 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_flag_clear_fetch), (14 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_flag_set), (14 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_flag_set_fetch), (14 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_u32_add), (22 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_u32_and), (22 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_u32_cmp_exch), (20 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_u32_fetch_add), (22 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_u32_fetch_and), (22 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_u32_fetch_or), (22 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_u32_fetch_store), (22 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_u32_fetch_sub), (22 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_u32_fetch_sub_hs), (22 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_u32_fetch_xor), (22 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_u32_or), (22 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_u32_store), (22 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_u32_sub), (22 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_u32_sub_hs), (22 bytes).
+    Removing nrf_atomic.o(i.nrf_atomic_u32_xor), (22 bytes).
+    Removing nrfx_twi.o(.rev16_text), (4 bytes).
+    Removing nrfx_twi.o(.revsh_text), (4 bytes).
+    Removing nrfx_twi.o(.rrx_text), (6 bytes).
+    Removing nrfx_twi.o(i.nrf_gpio_cfg), (40 bytes).
+    Removing nrfx_twi.o(i.nrf_gpio_cfg_default), (24 bytes).
+    Removing nrfx_twi.o(i.nrf_twi_int_disable), (6 bytes).
+    Removing nrfx_twi.o(i.nrfx_get_irq_number), (8 bytes).
+    Removing nrfx_twi.o(i.nrfx_twi_data_count_get), (24 bytes).
+    Removing nrfx_twi.o(i.nrfx_twi_disable), (68 bytes).
+    Removing nrfx_twi.o(i.nrfx_twi_enable), (40 bytes).
+    Removing nrfx_twi.o(i.nrfx_twi_init), (256 bytes).
+    Removing nrfx_twi.o(i.nrfx_twi_is_busy), (24 bytes).
+    Removing nrfx_twi.o(i.nrfx_twi_rx), (48 bytes).
+    Removing nrfx_twi.o(i.nrfx_twi_stopped_event_get), (14 bytes).
+    Removing nrfx_twi.o(i.nrfx_twi_tx), (62 bytes).
+    Removing nrfx_twi.o(i.nrfx_twi_uninit), (144 bytes).
+    Removing nrfx_twi.o(i.nrfx_twi_xfer), (48 bytes).
+    Removing nrfx_twi.o(i.twi_xfer), (180 bytes).
+    Removing nrfx_twi.o(.constdata), (60 bytes).
+    Removing nrfx_twim.o(.rev16_text), (4 bytes).
+    Removing nrfx_twim.o(.revsh_text), (4 bytes).
+    Removing nrfx_twim.o(.rrx_text), (6 bytes).
+    Removing nrf_drv_twi.o(.rev16_text), (4 bytes).
+    Removing nrf_drv_twi.o(.revsh_text), (4 bytes).
+    Removing nrf_drv_twi.o(.rrx_text), (6 bytes).
+    Removing nrf_drv_twi.o(i.nrf_drv_twi_init), (80 bytes).
+    Removing nrf_drv_twi.o(i.nrf_gpio_pin_clear), (22 bytes).
+    Removing nrf_drv_twi.o(i.nrf_gpio_pin_set), (22 bytes).
+    Removing nrf_drv_twi.o(i.nrfx_coredep_delay_us), (24 bytes).
+    Removing nrf_drv_twi.o(i.twi_clear_bus), (152 bytes).
+    Removing nrf_drv_twi.o(i.twi_evt_handler), (72 bytes).
+    Removing nrf_drv_twi.o(i.twim_evt_handler), (72 bytes).
+    Removing nrf_drv_twi.o(.constdata), (6 bytes).
+    Removing nrf_drv_twi.o(.data), (16 bytes).
+    Removing nrfx_spi.o(.rev16_text), (4 bytes).
+    Removing nrfx_spi.o(.revsh_text), (4 bytes).
+    Removing nrfx_spi.o(.rrx_text), (6 bytes).
+    Removing nrfx_spim.o(.rev16_text), (4 bytes).
+    Removing nrfx_spim.o(.revsh_text), (4 bytes).
+    Removing nrfx_spim.o(.rrx_text), (6 bytes).
+    Removing nrfx_spim.o(i.nrfx_spim_abort), (56 bytes).
+    Removing nrfx_spim.o(i.nrfx_spim_end_event_get), (18 bytes).
+    Removing nrfx_spim.o(i.nrfx_spim_start_task_get), (16 bytes).
+    Removing nrfx_spim.o(i.nrfx_spim_uninit), (204 bytes).
+    Removing nrfx_spim.o(.constdata), (40 bytes).
+    Removing nrf_drv_spi.o(.rev16_text), (4 bytes).
+    Removing nrf_drv_spi.o(.revsh_text), (4 bytes).
+    Removing nrf_drv_spi.o(.rrx_text), (6 bytes).
+    Removing nrf_drv_spi.o(i.spi_evt_handler), (64 bytes).
+    Removing rtx_conf_cm.o(i.__user_perthread_libspace), (44 bytes).
+    Removing rtx_conf_cm.o(i._mutex_initialize), (44 bytes).
+    Removing system_nrf52.o(.rev16_text), (4 bytes).
+    Removing system_nrf52.o(.revsh_text), (4 bytes).
+    Removing system_nrf52.o(.rrx_text), (6 bytes).
+    Removing rt_cmsis.o(.rev16_text), (4 bytes).
+    Removing rt_cmsis.o(.revsh_text), (4 bytes).
+    Removing rt_cmsis.o(.rrx_text), (6 bytes).
+    Removing rt_cmsis.o(i.isrSemaphoreRelease), (40 bytes).
+    Removing rt_cmsis.o(i.isrSignalSet), (36 bytes).
+    Removing rt_cmsis.o(i.osDelay), (24 bytes).
+    Removing rt_cmsis.o(i.osKernelRunning), (36 bytes).
+    Removing rt_cmsis.o(i.osKernelSysTick), (24 bytes).
+    Removing rt_cmsis.o(i.osMailAlloc), (28 bytes).
+    Removing rt_cmsis.o(i.osMailCAlloc), (48 bytes).
+    Removing rt_cmsis.o(i.osMailCreate), (44 bytes).
+    Removing rt_cmsis.o(i.osMailFree), (28 bytes).
+    Removing rt_cmsis.o(i.osMailGet), (22 bytes).
+    Removing rt_cmsis.o(i.osMailPut), (20 bytes).
+    Removing rt_cmsis.o(i.osMessageCreate), (44 bytes).
+    Removing rt_cmsis.o(i.osMessagePut), (24 bytes).
+    Removing rt_cmsis.o(i.osMutexCreate), (44 bytes).
+    Removing rt_cmsis.o(i.osMutexDelete), (24 bytes).
+    Removing rt_cmsis.o(i.osMutexRelease), (24 bytes).
+    Removing rt_cmsis.o(i.osMutexWait), (24 bytes).
+    Removing rt_cmsis.o(i.osPoolAlloc), (32 bytes).
+    Removing rt_cmsis.o(i.osPoolCAlloc), (52 bytes).
+    Removing rt_cmsis.o(i.osPoolCreate), (44 bytes).
+    Removing rt_cmsis.o(i.osPoolFree), (32 bytes).
+    Removing rt_cmsis.o(i.osSemaphoreCreate), (44 bytes).
+    Removing rt_cmsis.o(i.osSemaphoreDelete), (24 bytes).
+    Removing rt_cmsis.o(i.osSemaphoreRelease), (24 bytes).
+    Removing rt_cmsis.o(i.osSemaphoreWait), (24 bytes).
+    Removing rt_cmsis.o(i.osSignalClear), (24 bytes).
+    Removing rt_cmsis.o(i.osSignalSet), (24 bytes).
+    Removing rt_cmsis.o(i.osSignalWait), (24 bytes).
+    Removing rt_cmsis.o(i.osThreadGetId), (24 bytes).
+    Removing rt_cmsis.o(i.osThreadGetPriority), (24 bytes).
+    Removing rt_cmsis.o(i.osThreadSetPriority), (24 bytes).
+    Removing rt_cmsis.o(i.osThreadTerminate), (24 bytes).
+    Removing rt_cmsis.o(i.osThreadYield), (24 bytes).
+    Removing rt_cmsis.o(i.osTimerCreate), (44 bytes).
+    Removing rt_cmsis.o(i.osTimerDelete), (24 bytes).
+    Removing rt_cmsis.o(i.osTimerStart), (24 bytes).
+    Removing rt_cmsis.o(i.osTimerStop), (24 bytes).
+    Removing rt_cmsis.o(i.osWait), (4 bytes).
+    Removing rt_cmsis.o(i.os_resume), (12 bytes).
+    Removing rt_cmsis.o(i.os_suspend), (12 bytes).
+    Removing rt_cmsis.o(i.rt_clr_box), (24 bytes).
+    Removing rt_cmsis.o(i.rt_timer_remove), (60 bytes).
+    Removing rt_cmsis.o(i.svcDelay), (18 bytes).
+    Removing rt_cmsis.o(i.svcKernelRunning), (12 bytes).
+    Removing rt_cmsis.o(i.svcKernelSysTick), (56 bytes).
+    Removing rt_cmsis.o(i.svcMailCreate), (66 bytes).
+    Removing rt_cmsis.o(i.svcMessagePut), (54 bytes).
+    Removing rt_cmsis.o(i.svcMutexCreate), (28 bytes).
+    Removing rt_cmsis.o(i.svcMutexDelete), (26 bytes).
+    Removing rt_cmsis.o(i.svcMutexRelease), (34 bytes).
+    Removing rt_cmsis.o(i.svcMutexWait), (58 bytes).
+    Removing rt_cmsis.o(i.svcPoolCreate), (40 bytes).
+    Removing rt_cmsis.o(i.svcSemaphoreCreate), (36 bytes).
+    Removing rt_cmsis.o(i.svcSemaphoreDelete), (26 bytes).
+    Removing rt_cmsis.o(i.svcSemaphoreRelease), (40 bytes).
+    Removing rt_cmsis.o(i.svcSemaphoreWait), (50 bytes).
+    Removing rt_cmsis.o(i.svcSignalClear), (36 bytes).
+    Removing rt_cmsis.o(i.svcSignalSet), (36 bytes).
+    Removing rt_cmsis.o(i.svcSignalWait), (84 bytes).
+    Removing rt_cmsis.o(i.svcThreadGetPriority), (18 bytes).
+    Removing rt_cmsis.o(i.svcThreadSetPriority), (46 bytes).
+    Removing rt_cmsis.o(i.svcThreadYield), (10 bytes).
+    Removing rt_cmsis.o(i.svcTimerCreate), (56 bytes).
+    Removing rt_cmsis.o(i.svcTimerDelete), (40 bytes).
+    Removing rt_cmsis.o(i.svcTimerStart), (100 bytes).
+    Removing rt_cmsis.o(i.svcTimerStop), (36 bytes).
+    Removing rt_cmsis.o(i.sysMailAlloc), (88 bytes).
+    Removing rt_cmsis.o(i.sysMailFree), (96 bytes).
+    Removing rt_cmsis.o(i.sysPoolAlloc), (10 bytes).
+    Removing rt_cmsis.o(i.sysPoolFree), (20 bytes).
+    Removing rt_cmsis.o(i.sysUserTimerUpdate), (48 bytes).
+    Removing rt_cmsis.o(i.sysUserTimerWakeupTime), (20 bytes).
+    Removing rt_task.o(i.rt_tsk_pass), (48 bytes).
+    Removing rt_mutex.o(i.rt_mut_delete), (176 bytes).
+    Removing rt_mutex.o(i.rt_mut_init), (16 bytes).
+    Removing rt_system.o(.emb_text), (0 bytes).
+    Removing rt_system.o(i.os_tick_ovf), (16 bytes).
+    Removing rt_system.o(i.os_tick_val), (20 bytes).
+    Removing rt_system.o(i.rt_resume), (136 bytes).
+    Removing rt_system.o(i.rt_suspend), (36 bytes).
+    Removing rt_system.o(i.rt_tsk_lock), (80 bytes).
+    Removing rt_system.o(i.rt_tsk_unlock), (80 bytes).
+    Removing rt_event.o(i.isr_evt_set), (40 bytes).
+    Removing rt_event.o(i.rt_evt_clr), (28 bytes).
+    Removing rt_event.o(i.rt_evt_get), (12 bytes).
+    Removing rt_event.o(i.rt_evt_set), (92 bytes).
+    Removing rt_event.o(i.rt_evt_wait), (60 bytes).
+    Removing rt_list.o(i.rt_get_same_rdy_prio), (36 bytes).
+    Removing rt_mailbox.o(i.rt_mbx_send), (152 bytes).
+    Removing rt_semaphore.o(i.isr_sem_send), (16 bytes).
+    Removing rt_semaphore.o(i.rt_sem_delete), (92 bytes).
+    Removing rt_semaphore.o(i.rt_sem_init), (12 bytes).
+    Removing rt_semaphore.o(i.rt_sem_send), (42 bytes).
+    Removing rt_semaphore.o(i.rt_sem_wait), (64 bytes).
+    Removing rt_time.o(i.rt_dly_wait), (6 bytes).
+    Removing rt_time.o(i.rt_itv_set), (24 bytes).
+    Removing rt_time.o(i.rt_itv_wait), (40 bytes).
+    Removing rt_time.o(i.rt_time_get), (12 bytes).
+    Removing rt_membox.o(i._calloc_box), (30 bytes).
+
+380 unused section(s) (total 13965 bytes) removed from the image.

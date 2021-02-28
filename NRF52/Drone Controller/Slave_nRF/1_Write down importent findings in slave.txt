@@ -1,0 +1,3 @@
+has no The  mpu5060?
+-slave adress 0x68
+-
